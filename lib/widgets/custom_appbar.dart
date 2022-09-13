@@ -8,11 +8,12 @@ class CustomAppbar extends StatelessWidget {
   final bool? isLikeButton;
   final String? titleText;
 
-  const CustomAppbar(
-      {super.key,
-      required this.titleText,
-      this.isProfileImage = false,
-      this.isLikeButton = false});
+  const CustomAppbar({
+    super.key,
+    required this.titleText,
+    this.isProfileImage = false,
+    this.isLikeButton = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -47,10 +48,15 @@ class CustomAppbar extends StatelessWidget {
                 width: 25.w,
               ),
             )
-          : IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
+          : IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.arrow_back_ios,
+                color:AppTheme.blackColor,
+              )),
       title: Text(
         titleText!,
-        style:  TextStyle(
+        style: TextStyle(
             fontWeight: FontWeight.w600,
             color: AppTheme.textColor,
             fontSize: 20.sp),

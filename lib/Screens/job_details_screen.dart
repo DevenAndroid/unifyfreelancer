@@ -109,10 +109,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                               ),
                               Row(
                                 children: [
-                                  const Icon(
-                                    Icons.location_on_outlined,
-                                    color: AppTheme.pinkText,
-                                  ),
+                                  Image.asset("assets/icon/script.png"),
                                   SizedBox(
                                     width: 10.w,
                                   ),
