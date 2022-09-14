@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:unifyfreelancer/widgets/common_outline_button.dart';
 
 import '../resources/app_theme.dart';
 import '../widgets/custom_appbar.dart';
@@ -13,6 +13,18 @@ class ReportsScreen extends StatefulWidget {
 }
 
 class _ReportsScreenState extends State<ReportsScreen> {
+  String dropDownValue = 'All Transactions';
+
+  var items = [
+    'All Debits All Credits',
+    'Hourly',
+    'Fixed-Price',
+    'Bonus',
+    'Adjustments',
+    'Withdrawals',
+    'Expense',
+  ];
+
   @override
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
@@ -156,13 +168,316 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                           SizedBox(
                                             height: 5,
                                           ),
-                                          Container(
-                                              padding: EdgeInsets.all(10),
-                                              decoration: BoxDecoration(
-                                                  shape: BoxShape.circle,
-                                                  color: AppTheme.primaryColor),
-                                              child: Image.asset(
-                                                  "assets/icon/options.png"))
+                                          InkWell(
+                                            onTap: () {
+                                              showModalBottomSheet<void>(
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                            topLeft: Radius
+                                                                .circular(10),
+                                                            topRight:
+                                                                Radius.circular(
+                                                                    10))),
+                                                context: context,
+                                                isScrollControlled: true,
+                                                builder:
+                                                    (BuildContext context) {
+                                                  return Container(
+                                                    padding: EdgeInsets.all(10),
+                                                    decoration: BoxDecoration(
+                                                        color: AppTheme
+                                                            .whiteColor,
+                                                        borderRadius:
+                                                            BorderRadius.only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        10),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        10))),
+                                                    child: Column(
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .start,
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      children: <Widget>[
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            InkWell(
+                                                              onTap: () =>
+                                                                  Navigator.pop(
+                                                                      context),
+                                                              child: Icon(
+                                                                Icons.clear,
+                                                                color: AppTheme
+                                                                    .primaryColor,
+                                                              ),
+                                                            ),
+                                                            Text(
+                                                              'Filters',
+                                                              style: TextStyle(
+                                                                  fontSize: 25,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w600,
+                                                                  color: AppTheme
+                                                                      .textColor),
+                                                            ),
+                                                            SizedBox(),
+                                                          ],
+                                                        ),
+                                                        SizedBox(
+                                                          height: 20.h,
+                                                        ),
+                                                        DropdownButtonFormField<
+                                                            dynamic>(
+                                                          isExpanded: true,
+                                                          value: null,
+                                                          validator: (value) {
+                                                            if (value == null) {
+                                                              return 'Please select type';
+                                                            }
+                                                          },
+                                                          decoration:
+                                                              InputDecoration(
+                                                            hintStyle: TextStyle(
+                                                                fontSize: 16,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                color: AppTheme
+                                                                    .primaryColor),
+                                                            hintText:
+                                                                "All transactions",
+                                                            counterText: "",
+                                                            filled: true,
+                                                            fillColor: AppTheme
+                                                                .whiteColor,
+                                                            focusColor: AppTheme
+                                                                .whiteColor,
+                                                            contentPadding:
+                                                                const EdgeInsets
+                                                                        .symmetric(
+                                                                    horizontal:
+                                                                        8,
+                                                                    vertical:
+                                                                        16),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  const BorderSide(
+                                                                color: AppTheme
+                                                                    .primaryColor,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10.0),
+                                                            ),
+                                                            enabledBorder: const OutlineInputBorder(
+                                                                borderSide: BorderSide(
+                                                                    color: Color(
+                                                                        0xffDCDCDC)),
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            10.0))),
+                                                            border: OutlineInputBorder(
+                                                                borderSide: const BorderSide(
+                                                                    color: Color(
+                                                                        0xffDCDCDC),
+                                                                    width: 2.0),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10.0)),
+                                                          ),
+                                                          // Down Arrow Icon
+                                                          icon: const Icon(
+                                                              Icons
+                                                                  .keyboard_arrow_down,
+                                                              color: AppTheme
+                                                                  .primaryColor),
+                                                          items: List.generate(
+                                                              items.length,
+                                                              (index) =>
+                                                                  DropdownMenuItem(
+                                                                    value: items[
+                                                                        index],
+                                                                    child: Text(
+                                                                        items[index]
+                                                                            .toString(),
+                                                                        style: TextStyle(
+                                                                            fontSize:
+                                                                                16,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            color: AppTheme.primaryColor)),
+                                                                  )),
+                                                          // After selecting the desired option,it will
+                                                          // change button value to selected value
+                                                          onChanged:
+                                                              (newValue) {},
+                                                        ),
+                                                        SizedBox(
+                                                          height: 20.h,
+                                                        ),
+                                                        DropdownButtonFormField(
+                                                          isExpanded: true,
+                                                          // Initial Value
+                                                          validator: (value) {
+                                                            if (value == null) {
+                                                              return 'Please select type';
+                                                            }
+                                                          },
+                                                          decoration:
+                                                              InputDecoration(
+                                                            hintStyle: TextStyle(
+                                                                fontSize: 16,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w600,
+                                                                color: AppTheme
+                                                                    .primaryColor),
+                                                            hintText:
+                                                                "All freelancers",
+                                                            counterText: "",
+                                                            filled: true,
+                                                            fillColor: AppTheme
+                                                                .whiteColor,
+                                                            focusColor: AppTheme
+                                                                .whiteColor,
+                                                            contentPadding:
+                                                                const EdgeInsets
+                                                                        .symmetric(
+                                                                    horizontal:
+                                                                        8,
+                                                                    vertical:
+                                                                        16),
+                                                            focusedBorder:
+                                                                OutlineInputBorder(
+                                                              borderSide:
+                                                                  const BorderSide(
+                                                                color: AppTheme
+                                                                    .primaryColor,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          10.0),
+                                                            ),
+                                                            enabledBorder: const OutlineInputBorder(
+                                                                borderSide: BorderSide(
+                                                                    color: Color(
+                                                                        0xffDCDCDC)),
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            10.0))),
+                                                            border: OutlineInputBorder(
+                                                                borderSide: const BorderSide(
+                                                                    color: Color(
+                                                                        0xffDCDCDC),
+                                                                    width: 2.0),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10.0)),
+                                                          ),
+                                                          // Down Arrow Icon
+                                                          icon: const Icon(
+                                                              Icons
+                                                                  .keyboard_arrow_down,
+                                                              color: AppTheme
+                                                                  .primaryColor),
+                                                          items: List.generate(
+                                                              items.length,
+                                                              (index) =>
+                                                                  DropdownMenuItem(
+                                                                    value: items[
+                                                                        index],
+                                                                    child: Text(
+                                                                        items[index]
+                                                                            .toString(),
+                                                                        style: TextStyle(
+                                                                            fontSize:
+                                                                                16,
+                                                                            fontWeight:
+                                                                                FontWeight.w600,
+                                                                            color: AppTheme.primaryColor)),
+                                                                  )),
+                                                          // After selecting the desired option,it will
+                                                          // change button value to selected value
+                                                          onChanged:
+                                                              (newValue) {},
+                                                        ),
+                                                        SizedBox(
+                                                          height:
+                                                              deviceHeight * .4,
+                                                        ),
+                                                        Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          children: [
+                                                            Expanded(
+                                                              child:
+                                                                  CustomOutlineButton(
+                                                                title: "Clear",
+                                                                backgroundColor:
+                                                                    AppTheme
+                                                                        .whiteColor,
+                                                                expandedValue:
+                                                                    true,
+                                                                onPressed:
+                                                                    () {},
+                                                                textColor: AppTheme
+                                                                    .primaryColor,
+                                                              ),
+                                                            ),
+                                                            SizedBox(
+                                                              width: 10.w,
+                                                            ),
+                                                            Expanded(
+                                                              child:
+                                                                  CustomOutlineButton(
+                                                                title: "Apply",
+                                                                backgroundColor:
+                                                                    AppTheme
+                                                                        .primaryColor,
+                                                                expandedValue:
+                                                                    true,
+                                                                onPressed:
+                                                                    () {},
+                                                                textColor: AppTheme
+                                                                    .whiteColor,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        )
+                                                      ],
+                                                    ),
+                                                  );
+                                                },
+                                              );
+                                            },
+                                            child: Container(
+                                                padding: EdgeInsets.all(10),
+                                                decoration: BoxDecoration(
+                                                    shape: BoxShape.circle,
+                                                    color:
+                                                        AppTheme.primaryColor),
+                                                child: Image.asset(
+                                                    "assets/icon/options.png")),
+                                          )
                                         ],
                                       ),
                                       SizedBox(
@@ -223,64 +538,89 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               ),
                                             ),
                                             SizedBox(
-                                              height: deviceHeight * .01,
+                                              height: 10.h,
                                             ),
                                             TextFormField(
                                                 onChanged: (value) {
                                                   setState(() {});
                                                 },
                                                 decoration: InputDecoration(
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          vertical: 5,
-                                                          horizontal: 10),
-                                                  border:
-                                                      new OutlineInputBorder(
-                                                    borderRadius:
-                                                        new BorderRadius
-                                                            .circular(5.0),
-                                                    borderSide: new BorderSide(
-                                                        color: AppTheme
-                                                            .primaryColor),
-                                                  ),
-                                                  hintText:
-                                                      'Aug 8, 2022 - Aug 15, 2022',
-                                                  focusColor:
-                                                      AppTheme.primaryColor,
-                                                  hintStyle: TextStyle(
-                                                      fontSize: 16,
-                                                      fontWeight:
-                                                          FontWeight.w600,
-                                                      color: AppTheme
-                                                          .hintTextColor),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        new BorderRadius
-                                                            .circular(5.0),
-                                                    borderSide: new BorderSide(
-                                                        color: AppTheme
-                                                            .primaryColor),
-                                                  ),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        new BorderRadius
-                                                            .circular(5.0),
-                                                    borderSide: new BorderSide(
-                                                        color: AppTheme
-                                                            .primaryColor),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderRadius:
-                                                        new BorderRadius
-                                                            .circular(5.0),
-                                                    borderSide: new BorderSide(
-                                                        color: AppTheme
-                                                            .primaryColor),
-                                                  ),
-                                                )),
+                                                    contentPadding:
+                                                        EdgeInsets.symmetric(
+                                                            vertical: 5,
+                                                            horizontal: 10),
+                                                    border:
+                                                        new OutlineInputBorder(
+                                                      borderRadius:
+                                                          new BorderRadius
+                                                              .circular(5.0),
+                                                      borderSide:
+                                                          new BorderSide(
+                                                              color: Color(
+                                                                  0xffE8E7E7)),
+                                                    ),
+                                                    hintText:
+                                                        'Aug 8, 2022 - Aug 15, 2022',
+                                                    focusColor:
+                                                        Color(0xffE8E7E7),
+                                                    hintStyle: TextStyle(
+                                                        fontSize: 13,
+                                                        color:
+                                                            Color(0xff828282)),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          new BorderRadius
+                                                              .circular(5.0),
+                                                      borderSide:
+                                                          new BorderSide(
+                                                              color: Color(
+                                                                  0xffE8E7E7)),
+                                                    ),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          new BorderRadius
+                                                              .circular(5.0),
+                                                      borderSide:
+                                                          new BorderSide(
+                                                              color: Color(
+                                                                  0xffE8E7E7)),
+                                                    ),
+                                                    errorBorder:
+                                                        OutlineInputBorder(
+                                                      borderRadius:
+                                                          new BorderRadius
+                                                              .circular(5.0),
+                                                      borderSide:
+                                                          new BorderSide(
+                                                              color: Color(
+                                                                  0xffE8E7E7)),
+                                                    ),
+                                                    suffixIcon: Icon(
+                                                      Icons
+                                                          .calendar_month_outlined,
+                                                      color:
+                                                          AppTheme.primaryColor,
+                                                    ))),
+                                            SizedBox(
+                                              height: 30.h,
+                                            ),
+                                            Image.asset(
+                                                "assets/images/investment.png"),
+                                            SizedBox(
+                                              height: 20.h,
+                                            ),
+                                            Text(
+                                              "No transactions meet your selected criteria",
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Color(0xff00065A)),
+                                            ),
+                                            SizedBox(
+                                              height: 10.h,
+                                            ),
                                           ],
                                         ),
                                       )

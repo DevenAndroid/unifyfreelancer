@@ -43,10 +43,8 @@ class _ContractsScreenState extends State<ContractsScreen> {
                     "Active Contracts",
                     style: TextStyle(
                         fontSize: 20,
-                        color:
-                        AppTheme.textColor,
-                        fontWeight:
-                        FontWeight.w600),
+                        color: AppTheme.textColor,
+                        fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -211,88 +209,96 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                               InkWell(
                                                 onTap: () {
                                                   showModalBottomSheet<void>(
+                                                    shape: RoundedRectangleBorder(
+                                                        borderRadius:
+                                                            BorderRadius.only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        10),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        10))),
                                                     context: context,
                                                     builder:
                                                         (BuildContext context) {
                                                       return Container(
-                                                        color:
-                                                            AppTheme.whiteColor,
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsets.all(
-                                                                  10),
-                                                          child: Column(
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .start,
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .min,
-                                                            children: <Widget>[
-                                                              Align(
-                                                                  alignment:
-                                                                      Alignment
-                                                                          .topRight,
-                                                                  child:
-                                                                      InkWell(
-                                                                    onTap: () =>
-                                                                        Navigator.pop(
-                                                                            context),
-                                                                    child: Icon(
-                                                                      Icons
-                                                                          .clear,
-                                                                      color: Colors
-                                                                          .black,
-                                                                    ),
-                                                                  )),
-                                                              const Text(
-                                                                'View work diary',
-                                                                style: TextStyle(
-                                                                    fontSize:
-                                                                        16,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    color: AppTheme
-                                                                        .darkBlueText),
-                                                              ),
-                                                              SizedBox(
-                                                                height:
-                                                                    deviceWidth *
-                                                                        .03,
-                                                              ),
-                                                              const Text(
-                                                                'Send Message',
-                                                                style: TextStyle(
-                                                                    fontSize:
-                                                                        16,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    color: AppTheme
-                                                                        .darkBlueText),
-                                                              ),
-                                                              SizedBox(
-                                                                height:
-                                                                    deviceWidth *
-                                                                        .03,
-                                                              ),
-                                                              const Text(
-                                                                'Propose new contract',
-                                                                style: TextStyle(
-                                                                    fontSize:
-                                                                        16,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                    color: AppTheme
-                                                                        .darkBlueText),
-                                                              ),
-                                                            ],
-                                                          ),
+                                                        padding:
+                                                            EdgeInsets.all(10),
+                                                        decoration: BoxDecoration(
+                                                            color: AppTheme
+                                                                .whiteColor,
+                                                            borderRadius: BorderRadius.only(
+                                                                topLeft: Radius
+                                                                    .circular(
+                                                                        10),
+                                                                topRight: Radius
+                                                                    .circular(
+                                                                        10))),
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .start,
+                                                          mainAxisSize:
+                                                              MainAxisSize.min,
+                                                          children: <Widget>[
+                                                            Align(
+                                                                alignment:
+                                                                    Alignment
+                                                                        .topRight,
+                                                                child: InkWell(
+                                                                  onTap: () =>
+                                                                      Navigator.pop(
+                                                                          context),
+                                                                  child: Icon(
+                                                                    Icons.clear,
+                                                                    color: Colors
+                                                                        .black,
+                                                                  ),
+                                                                )),
+                                                            const Text(
+                                                              'View work diary',
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  color: AppTheme
+                                                                      .darkBlueText),
+                                                            ),
+                                                            SizedBox(
+                                                              height:
+                                                                  deviceWidth *
+                                                                      .03,
+                                                            ),
+                                                            const Text(
+                                                              'Send Message',
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  color: AppTheme
+                                                                      .darkBlueText),
+                                                            ),
+                                                            SizedBox(
+                                                              height:
+                                                                  deviceWidth *
+                                                                      .03,
+                                                            ),
+                                                            const Text(
+                                                              'Propose new contract',
+                                                              style: TextStyle(
+                                                                  fontSize: 16,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  color: AppTheme
+                                                                      .darkBlueText),
+                                                            ),
+                                                          ],
                                                         ),
                                                       );
                                                     },
@@ -781,50 +787,57 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                           Row(
                                             children: [
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     "\$2000.00",
                                                     style: TextStyle(
                                                         fontSize: 14,
-                                                      color: Color(0xff130E1D),
-                                                    fontWeight: FontWeight.w500),
+                                                        color:
+                                                            Color(0xff130E1D),
+                                                        fontWeight:
+                                                            FontWeight.w500),
                                                   ),
                                                   SizedBox(
-                                                    height: deviceHeight*.01,
+                                                    height: deviceHeight * .01,
                                                   ),
-
                                                   Text(
                                                     "\$500.00",
                                                     style: TextStyle(
-                                                      fontSize: 14,
-                                                        color: Color(0xff130E1D),
-                                                        fontWeight: FontWeight.w500),
+                                                        fontSize: 14,
+                                                        color:
+                                                            Color(0xff130E1D),
+                                                        fontWeight:
+                                                            FontWeight.w500),
                                                   ),
                                                 ],
                                               ),
                                               SizedBox(
-                                                width: deviceWidth*.02,
+                                                width: deviceWidth * .02,
                                               ),
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     "Budget",
                                                     style: TextStyle(
-                                                        fontSize: 14,
-                                                        color: AppTheme.textColor3,
-                                                        ),
+                                                      fontSize: 14,
+                                                      color:
+                                                          AppTheme.textColor3,
+                                                    ),
                                                   ),
                                                   SizedBox(
-                                                    height: deviceHeight*.01,
+                                                    height: deviceHeight * .01,
                                                   ),
                                                   Text(
                                                     "in Escrow",
                                                     style: TextStyle(
-                                                        fontSize: 14,
-                                                      color: AppTheme.textColor3,),
+                                                      fontSize: 14,
+                                                      color:
+                                                          AppTheme.textColor3,
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -837,10 +850,9 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                             "Oct 16 - Present",
                                             style: TextStyle(
                                               fontSize: 14,
-                                              color: AppTheme.textColor3,),
+                                              color: AppTheme.textColor3,
+                                            ),
                                           ),
-
-
                                           SizedBox(
                                             height: deviceHeight * .025,
                                           ),
@@ -888,11 +900,11 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Row(
                                             crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Expanded(
                                                 child: Text(
@@ -900,9 +912,9 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                                   style: TextStyle(
                                                       fontSize: 18,
                                                       color:
-                                                      AppTheme.darkBlueText,
+                                                          AppTheme.darkBlueText,
                                                       fontWeight:
-                                                      FontWeight.w600),
+                                                          FontWeight.w600),
                                                 ),
                                               ),
                                               InkWell(
@@ -913,28 +925,28 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                                         (BuildContext context) {
                                                       return Container(
                                                         color:
-                                                        AppTheme.whiteColor,
+                                                            AppTheme.whiteColor,
                                                         child: Padding(
                                                           padding:
-                                                          EdgeInsets.all(
-                                                              10),
+                                                              EdgeInsets.all(
+                                                                  10),
                                                           child: Column(
                                                             crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
+                                                                CrossAxisAlignment
+                                                                    .start,
                                                             mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
+                                                                MainAxisAlignment
+                                                                    .start,
                                                             mainAxisSize:
-                                                            MainAxisSize
-                                                                .min,
+                                                                MainAxisSize
+                                                                    .min,
                                                             children: <Widget>[
                                                               Align(
                                                                   alignment:
-                                                                  Alignment
-                                                                      .topRight,
+                                                                      Alignment
+                                                                          .topRight,
                                                                   child:
-                                                                  InkWell(
+                                                                      InkWell(
                                                                     onTap: () =>
                                                                         Navigator.pop(
                                                                             context),
@@ -949,42 +961,42 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                                                 'View work diary',
                                                                 style: TextStyle(
                                                                     fontSize:
-                                                                    16,
+                                                                        16,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                        FontWeight
+                                                                            .w500,
                                                                     color: AppTheme
                                                                         .darkBlueText),
                                                               ),
                                                               SizedBox(
                                                                 height:
-                                                                deviceWidth *
-                                                                    .03,
+                                                                    deviceWidth *
+                                                                        .03,
                                                               ),
                                                               const Text(
                                                                 'Send Message',
                                                                 style: TextStyle(
                                                                     fontSize:
-                                                                    16,
+                                                                        16,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                        FontWeight
+                                                                            .w500,
                                                                     color: AppTheme
                                                                         .darkBlueText),
                                                               ),
                                                               SizedBox(
                                                                 height:
-                                                                deviceWidth *
-                                                                    .03,
+                                                                    deviceWidth *
+                                                                        .03,
                                                               ),
                                                               const Text(
                                                                 'Propose new contract',
                                                                 style: TextStyle(
                                                                     fontSize:
-                                                                    16,
+                                                                        16,
                                                                     fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                                        FontWeight
+                                                                            .w500,
                                                                     color: AppTheme
                                                                         .darkBlueText),
                                                               ),
@@ -998,7 +1010,7 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                                 child: Container(
                                                   decoration: BoxDecoration(
                                                       color:
-                                                      AppTheme.primaryColor,
+                                                          AppTheme.primaryColor,
                                                       shape: BoxShape.circle),
                                                   child: Icon(
                                                     Icons.more_horiz_outlined,
@@ -1044,50 +1056,57 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                           Row(
                                             children: [
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     "\$2000.00",
                                                     style: TextStyle(
                                                         fontSize: 14,
-                                                        color: Color(0xff130E1D),
-                                                        fontWeight: FontWeight.w500),
+                                                        color:
+                                                            Color(0xff130E1D),
+                                                        fontWeight:
+                                                            FontWeight.w500),
                                                   ),
                                                   SizedBox(
-                                                    height: deviceHeight*.01,
+                                                    height: deviceHeight * .01,
                                                   ),
-
                                                   Text(
                                                     "\$500.00",
                                                     style: TextStyle(
                                                         fontSize: 14,
-                                                        color: Color(0xff130E1D),
-                                                        fontWeight: FontWeight.w500),
+                                                        color:
+                                                            Color(0xff130E1D),
+                                                        fontWeight:
+                                                            FontWeight.w500),
                                                   ),
                                                 ],
                                               ),
                                               SizedBox(
-                                                width: deviceWidth*.02,
+                                                width: deviceWidth * .02,
                                               ),
                                               Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     "Budget",
                                                     style: TextStyle(
                                                       fontSize: 14,
-                                                      color: AppTheme.textColor3,
+                                                      color:
+                                                          AppTheme.textColor3,
                                                     ),
                                                   ),
                                                   SizedBox(
-                                                    height: deviceHeight*.01,
+                                                    height: deviceHeight * .01,
                                                   ),
                                                   Text(
                                                     "in Escrow",
                                                     style: TextStyle(
                                                       fontSize: 14,
-                                                      color: AppTheme.textColor3,),
+                                                      color:
+                                                          AppTheme.textColor3,
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -1100,17 +1119,16 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                             "Oct 16 - Present",
                                             style: TextStyle(
                                               fontSize: 14,
-                                              color: AppTheme.textColor3,),
+                                              color: AppTheme.textColor3,
+                                            ),
                                           ),
-
-
                                           SizedBox(
                                             height: deviceHeight * .025,
                                           ),
                                           CustomOutlineButton(
                                             title: "Send Message",
                                             backgroundColor:
-                                            AppTheme.primaryColor,
+                                                AppTheme.primaryColor,
                                             textColor: AppTheme.whiteColor,
                                             expandedValue: true,
                                             onPressed: () {},

@@ -26,266 +26,104 @@ class _AlertsScreenState extends State<AlertsScreen> {
           titleText: "Alerts",
         ),
       ),
-      body: SingleChildScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    "Today",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: AppTheme.textColor,
-                        fontWeight: FontWeight.w500),
-                  ),
+      body: ListView.builder(
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  "Today",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                      fontSize: 18,
+                      color: AppTheme.textColor,
+                      fontWeight: FontWeight.w500),
                 ),
-              ],
-            ),
-            SizedBox(
-              height: deviceHeight * .01,
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-              decoration: BoxDecoration(
-                color: AppTheme.whiteColor,
-                border: Border(
-                    bottom: BorderSide(
-                        color: AppTheme.primaryColor.withOpacity(.15))),
               ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                      padding: EdgeInsets.all(10),
+              SizedBox(
+                height: deviceHeight * .01,
+              ),
+              ListView.builder(
+                  itemCount: 3,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return Container(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                       decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppTheme.primaryColor.withOpacity(.15)),
-                      child: Image.asset(
-                        "assets/icon/rocket.png",
-                      )),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Expanded(
-                    child: Text(
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                      style: TextStyle(
-                        fontSize: 13.sp,
-                        color: AppTheme.textColor,
+                        color: AppTheme.whiteColor,
+                        border: Border(
+                            bottom: BorderSide(
+                                color:
+                                    AppTheme.primaryColor.withOpacity(.15))),
                       ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.clear,
-                      color: Colors.black,
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-              decoration: BoxDecoration(
-                color: AppTheme.whiteColor,
-                border: Border(
-                    bottom: BorderSide(
-                        color: AppTheme.primaryColor.withOpacity(.15))),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppTheme.primaryColor.withOpacity(.15)),
-                      child: Image.asset(
-                        "assets/icon/rocket.png",
-                      )),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Expanded(
-                    child: Text(
-                      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the ",
-                      style: TextStyle(
-                        fontSize: 13.sp,
-                        color: AppTheme.textColor,
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.clear,
-                      color: Colors.black,
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-              decoration: BoxDecoration(
-                color: AppTheme.whiteColor,
-                border: Border(
-                    bottom: BorderSide(
-                        color: AppTheme.primaryColor.withOpacity(.15))),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: AppTheme.primaryColor.withOpacity(.15)),
-                      child: Image.asset(
-                        "assets/icon/rocket.png",
-                      )),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            color: AppTheme.textColor,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 20.w,
-                        ),
-                        CustomOutlineButton(
-                          expandedValue: false,
-                          title: "   Respond   ",
-                          backgroundColor: AppTheme.primaryColor,
-                          textColor: AppTheme.whiteColor,
-                          onPressed: () {},
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  InkWell(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.clear,
-                      color: Colors.black,
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: deviceHeight * .02,
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    "Tomorrow",
-                    style: TextStyle(
-                        fontSize: 18,
-                        color: AppTheme.textColor,
-                        fontWeight: FontWeight.w500),
-                  ),
-                ),
-              ],
-            ),
-            ListView.builder(
-              shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                itemCount: 10,
-                itemBuilder:(context ,index ){
-              return Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-                decoration: BoxDecoration(
-                  color: AppTheme.whiteColor,
-                  border: Border(
-                      bottom: BorderSide(
-                          color: AppTheme.primaryColor.withOpacity(.15))),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: AppTheme.primaryColor.withOpacity(.15)),
-                        child: Image.asset(
-                          "assets/icon/rocket.png",
-                        )),
-                    SizedBox(
-                      width: 10.w,
-                    ),
-                    Expanded(
-                      child: Column(
+                      child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text(
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                            style: TextStyle(
-                              fontSize: 13.sp,
-                              color: AppTheme.textColor,
+                          Container(
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color:
+                                      AppTheme.primaryColor.withOpacity(.15)),
+                              child: Image.asset(
+                                "assets/icon/rocket.png",
+                              )),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                                  style: TextStyle(
+                                    fontSize: 13.sp,
+                                    color: AppTheme.textColor,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20.w,
+                                ),
+                                index % 2 == 0
+                                    ? CustomOutlineButton(
+                                        expandedValue: false,
+                                        title: "   Respond   ",
+                                        backgroundColor:
+                                            AppTheme.primaryColor,
+                                        textColor: AppTheme.whiteColor,
+                                        onPressed: () {},
+                                      )
+                                    : SizedBox()
+                              ],
                             ),
                           ),
                           SizedBox(
-                            height: 20.w,
+                            width: 10.w,
                           ),
-                          CustomOutlineButton(
-                            expandedValue: false,
-                            title: "   Respond   ",
-                            backgroundColor: AppTheme.primaryColor,
-                            textColor: AppTheme.whiteColor,
-                            onPressed: () {},
+                          InkWell(
+                            onTap: () {},
+                            child: Icon(
+                              Icons.clear,
+                              color: Colors.black,
+                            ),
                           )
                         ],
                       ),
-                    ),
-                    SizedBox(
-                      width: 10.w,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.clear,
-                        color: Colors.black,
-                      ),
-                    )
-                  ],
-                ),
-              );
-            })
-          ],
-        ),
+                    );
+                  }),
+            ],
+          );
+        },
       ),
     );
   }

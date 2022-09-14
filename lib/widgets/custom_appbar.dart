@@ -81,12 +81,12 @@ class CustomAppbar extends StatelessWidget {
                 ),
                 child: Container(
                   decoration: const BoxDecoration(
-                    color: AppTheme.blackColor,
+
                     shape: BoxShape.circle,
                   ),
                   height: 20.h,
                   width: 20.w,
-                  child: const Icon(Icons.heart_broken),
+                  child: Image.asset('assets/icon/heart.png')
                 ),
               )
             : const SizedBox()

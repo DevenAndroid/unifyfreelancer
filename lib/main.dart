@@ -25,6 +25,7 @@ class MyApp extends StatelessWidget {
           getPages: MyRouter.route,
           theme: ThemeData(
             primarySwatch: Colors.blue,
+              fontFamily: 'Poppins'
           ),
         );
       },
