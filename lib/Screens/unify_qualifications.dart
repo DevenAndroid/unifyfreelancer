@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_theme.dart';
-import '../resources/strings.dart';
 import '../widgets/appdrawer.dart';
-import '../widgets/common_button.dart';
-import '../widgets/common_outline_button.dart';
+
 import '../widgets/custom_appbar.dart';
 
 class UnifyQualificationsScreen extends StatefulWidget {
@@ -19,8 +17,6 @@ class UnifyQualificationsScreen extends StatefulWidget {
 class _UnifyQualificationsScreenState extends State<UnifyQualificationsScreen> {
   @override
   Widget build(BuildContext context) {
-    var deviceHeight = MediaQuery.of(context).size.height;
-    var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
