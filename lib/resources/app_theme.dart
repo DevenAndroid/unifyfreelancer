@@ -15,10 +15,22 @@ class AppTheme {
   static const Color greyTextColor2 = Color(0xff3B3B3B);
   static const Color hintTextColor = Color(0xff431444);
   static const Color borderColor = Color(0xffD9D9D9);
-
   static const Color settingsTextColor = Color(0xff1F1F1F);
 
-
-
-
 }
+
+MaterialColor primaryColorShades = MaterialColor(
+  0xff6D2EF1,
+  <int, Color>{
+    50: Color(0xff6D2EF1),
+    100: Color(0xff6D2EF1),
+    200: Color(0xff6D2EF1),
+    300: Color(0xff6D2EF1),
+    400: Color(0xff6D2EF1),
+    500: Color(0xff6D2EF1),
+    600: Color(0xff6D2EF1),
+    700: Color(0xff6D2EF1),
+    800: Color(0xff6D2EF1),
+    900: Color(0xff6D2EF1),
+  },
+);

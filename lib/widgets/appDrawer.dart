@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:unifyfreelancer/resources/app_theme.dart';
 
-class AppdrawerScreen extends StatefulWidget {
-  const AppdrawerScreen({Key? key}) : super(key: key);
+import '../resources/app_theme.dart';
+
+
+class AppDrawerScreen extends StatefulWidget {
+  const AppDrawerScreen({Key? key}) : super(key: key);
 
   @override
-  State<AppdrawerScreen> createState() => _AppdrawerScreenState();
+  State<AppDrawerScreen> createState() => _AppDrawerScreenState();
 }
 
-class _AppdrawerScreenState extends State<AppdrawerScreen> {
+class _AppDrawerScreenState extends State<AppDrawerScreen> {
   @override
   Widget build(BuildContext context) {
     return Drawer(

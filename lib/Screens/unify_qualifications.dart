@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_theme.dart';
-import '../widgets/appdrawer.dart';
+import '../widgets/appDrawer.dart';
 
 import '../widgets/custom_appbar.dart';
 
@@ -23,11 +23,11 @@ class _UnifyQualificationsScreenState extends State<UnifyQualificationsScreen> {
         child: CustomAppbar(
           isLikeButton: false,
           isProfileImage: false,
-          titleText: "Unify Qualifications",
+          titleText: "Settings",
           // onPressedForLeading:,
         ),
       ),
-      drawer: AppdrawerScreen(),
+      drawer: AppDrawerScreen(),
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(
@@ -36,57 +36,296 @@ class _UnifyQualificationsScreenState extends State<UnifyQualificationsScreen> {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: 6,
-                    itemBuilder: (context, index) {
-                      return Card(
-                          margin: EdgeInsets.only(top: 10),
-                          color: AppTheme.whiteColor,
-                          elevation: 1,
-                          child: Padding(
-                            padding: EdgeInsets.all(10),
-                            child: Row(
-                              children: [
-                                Container(
-                                    padding: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: AppTheme.primaryColor
-                                            .withOpacity(.15)),
-                                    child: Image.asset(
-                                      "assets/icon/degree.png",
-                                    )),
-                                SizedBox(
-                                  width: 10.w,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      "Wordpress Web design Course",
-                                      style: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w600,
-                                          color: Color(0xff1F1F1F)),
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    Text(
-                                      "Aug 28, 2022",
-                                      style: TextStyle(
-                                          fontSize: 14,
-                                          color: Color(0xff6B6B6B)),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ));
-                    })
-                ,
+                Card(
+                    margin: EdgeInsets.only(top: 10),
+                    color: AppTheme.whiteColor,
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.all(7),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15)),
+                                  child: Icon(
+                                    Icons.account_balance_wallet,
+                                    color: AppTheme.primaryColor,
+                                    size: 20,
+                                  )),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "Billing & Payment",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1F1F1F)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: AppTheme.blackColor,
+                            size: 20,
+                          )
+                        ],
+                      ),
+                    )),
+                Card(
+                    margin: EdgeInsets.only(top: 10),
+                    color: AppTheme.whiteColor,
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.all(7),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15)),
+                                  child: Icon(
+                                    Icons.description_outlined,
+                                    color: AppTheme.primaryColor,
+                                    size: 20,
+                                  )),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "Contact info",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1F1F1F)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: AppTheme.blackColor,
+                            size: 20,
+                          )
+                        ],
+                      ),
+                    )),
+                Card(
+                    margin: EdgeInsets.only(top: 10),
+                    color: AppTheme.whiteColor,
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.all(7),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15)),
+                                  child: Image.asset("assets/icon/tax.png")),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "Tax Information",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1F1F1F)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: AppTheme.blackColor,
+                            size: 20,
+                          )
+                        ],
+                      ),
+                    )),
+                Card(
+                    margin: EdgeInsets.only(top: 10),
+                    color: AppTheme.whiteColor,
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.all(7),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15)),
+                                  child: Icon(
+                                    Icons.person_outline_rounded,
+                                    color: AppTheme.primaryColor,
+                                    size: 20,
+                                  )),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "Profile setting",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1F1F1F)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: AppTheme.blackColor,
+                            size: 20,
+                          )
+                        ],
+                      ),
+                    )),
+                Card(
+                    margin: EdgeInsets.only(top: 10),
+                    color: AppTheme.whiteColor,
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.all(7),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15)),
+                                  child: Icon(
+                                    Icons.account_balance_wallet,
+                                    color: AppTheme.primaryColor,
+                                    size: 20,
+                                  )),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "Get paid",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1F1F1F)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: AppTheme.blackColor,
+                            size: 20,
+                          )
+                        ],
+                      ),
+                    )),
+                Card(
+                    margin: EdgeInsets.only(top: 10),
+                    color: AppTheme.whiteColor,
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.all(7),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15)),
+                                  child: Icon(
+                                    Icons.people_outline,
+                                    color: AppTheme.primaryColor,
+                                    size: 20,
+                                  )),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "My Teams ",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1F1F1F)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: AppTheme.blackColor,
+                            size: 20,
+                          )
+                        ],
+                      ),
+                    )),
+                Card(
+                    margin: EdgeInsets.only(top: 10),
+                    color: AppTheme.whiteColor,
+                    elevation: 1,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                  padding: EdgeInsets.all(7),
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15)),
+                                  child: Icon(
+                                    Icons.lock_outline,
+                                    color: AppTheme.primaryColor,
+                                    size: 20,
+                                  )),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "Password & security",
+                                style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1F1F1F)),
+                              ),
+                            ],
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_outlined,
+                            color: AppTheme.blackColor,
+                            size: 20,
+                          )
+                        ],
+                      ),
+                    )),
               ],
             )),
       ),

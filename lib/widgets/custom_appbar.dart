@@ -52,7 +52,7 @@ class CustomAppbar extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(
                 Icons.arrow_back_ios,
-                color:AppTheme.blackColor,
+                color:Color(0xff756C87),
               )),
       title: Text(
         titleText!,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_theme.dart';
-import '../widgets/appdrawer.dart';
+import '../widgets/appDrawer.dart';
 import '../widgets/custom_appbar.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -21,11 +21,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: CustomAppbar(
           isLikeButton: false,
           isProfileImage: false,
-          titleText: "Unify Qualifications",
+          titleText: "Settings",
           // onPressedForLeading:,
         ),
       ),
-      drawer: AppdrawerScreen(),
+      drawer: AppDrawerScreen(),
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(
