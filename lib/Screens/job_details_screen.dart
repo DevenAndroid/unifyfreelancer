@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 
 import '../../resources/app_theme.dart';
 import '../../widgets/custom_appbar.dart';
@@ -18,15 +19,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
   final _receiveController = TextEditingController();
   final _letterController = TextEditingController();
 
-  String dropdownvalue = 'Item 1';
-
-  var items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-  ];
+  String gendar = "";
 
   @override
   Widget build(BuildContext context) {
@@ -557,6 +550,16 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                             borderSide:
                                 new BorderSide(color: AppTheme.primaryColor),
                           ),
+                          disabledBorder: OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(5.0),
+                            borderSide:
+                                new BorderSide(color: AppTheme.primaryColor),
+                          ),
+                          focusedErrorBorder: OutlineInputBorder(
+                            borderRadius: new BorderRadius.circular(5.0),
+                            borderSide:
+                                new BorderSide(color: AppTheme.primaryColor),
+                          ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: new BorderRadius.circular(5.0),
                             borderSide:
@@ -576,57 +579,122 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     SizedBox(
                       height: deviceHeight * .01,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: AppTheme.primaryColor),
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(5)),
-                        color: Colors.white,
-                      ),
-                      child: DropdownButtonFormField(
-                        isExpanded: true,
-                        // Initial Value
-                        validator: (value) {
-                          if (value == null) {
-                            return 'Please select type';
-                          }
-                        },
-                        decoration: InputDecoration(
-                          hintStyle: TextStyle(fontSize: 15,fontWeight: FontWeight.w300,color: AppTheme.hintTextColor),
-                          hintText: "Select a duration",
-                          counterText: "",
-                          filled: true,
-                          fillColor: AppTheme.whiteColor,
-                          focusColor: AppTheme.whiteColor,
-                          contentPadding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 16),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: AppTheme.whiteColor,
+                    InkWell(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return StatefulBuilder(
+                              builder: (context, snapshot) {
+                                return Expanded(
+
+                                  child: AlertDialog(
+                                    content: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: [
+                                        RadioListTile(
+                                          title: Text(
+                                            "More than 6 Month",
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: AppTheme.settingsTextColor),
+                                          ),
+                                          contentPadding: const EdgeInsets.all(0),
+                                          dense: true,
+                                          visualDensity: VisualDensity(horizontal: -4, vertical: -4),
+                                          value: "male",
+                                          groupValue: gendar,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              gendar = value.toString();
+                                            });
+                                          },
+                                        ),
+                                        RadioListTile(
+                                          title: Text(
+                                            "3 to 6 month",
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: AppTheme.settingsTextColor),
+                                          ),
+                                          contentPadding: const EdgeInsets.all(0),
+                                          dense: true,
+                                          visualDensity:
+                                          const VisualDensity(horizontal: -4, vertical: -4),
+                                          value: "female",
+                                          groupValue: gendar,
+                                          onChanged: (value) {
+
+                                          },
+                                        ),
+                                        RadioListTile(
+                                          title: Text(
+                                            "3 to 6 month",
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: AppTheme.settingsTextColor),
+                                          ),
+                                          contentPadding: const EdgeInsets.all(0),
+                                          dense: true,
+                                          visualDensity:
+                                          const VisualDensity(horizontal: -4, vertical: -4),
+                                          value: "other",
+                                          groupValue: gendar,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              gendar = value.toString();
+                                            });
+                                          },
+                                        ),
+                                        RadioListTile(
+                                          title: Text(
+                                            "Less than 1 month",
+                                            style: TextStyle(
+                                                fontSize: 14,
+                                                color: AppTheme.settingsTextColor),
+                                          ),
+                                          contentPadding: const EdgeInsets.all(0),
+                                          dense: true,
+                                          visualDensity:
+                                          const VisualDensity(horizontal: -4, vertical: -4),
+                                          value: "other",
+                                          groupValue: gendar,
+                                          onChanged: (value) {
+                                            setState(() {
+                                              gendar = value.toString();
+                                            });
+                                          },
+                                        ),
+                                      ],
+                                    )
+                                  ),
+                                );
+                              }
+                            );
+                          },
+                        );
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: AppTheme.primaryColor),
+                            borderRadius: BorderRadius.all(Radius.circular(5))),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Select a duration',
+                              style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w300,
+                                  color: Color(0xff431444)),
                             ),
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                          enabledBorder: const OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: AppTheme.whiteColor),
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0))),
-                          border: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                  color: AppTheme.whiteColor, width: 2.0),
-                              borderRadius: BorderRadius.circular(10.0)),
+                            Icon(
+                              Icons.keyboard_arrow_down_rounded,
+                              color: AppTheme.blackColor,
+                            ),
+                          ],
                         ),
-                        // Down Arrow Icon
-                        icon: const Icon(Icons.keyboard_arrow_down),
-                        items: List.generate(
-                            items.length,
-                            (index) => DropdownMenuItem(
-                                  value: items[index],
-                                  child: Text(items[index].toString()),
-                                )),
-                        // After selecting the desired option,it will
-                        // change button value to selected value
-                        onChanged: (newValue) {},
                       ),
                     ),
                     SizedBox(

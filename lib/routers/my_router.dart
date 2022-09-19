@@ -9,10 +9,13 @@ import '../Screens/contact_info_screen.dart';
 import '../Screens/contracts_details_screen.dart';
 import '../Screens/contracts_screen.dart';
 import '../Screens/get_paid_screen.dart';
+import '../Screens/help_and_support_screen.dart';
+import '../Screens/help_and_support_screen.dart';
 import '../Screens/home_screen.dart';
 import '../Screens/job_details_screen.dart';
 import '../Screens/messages_screen.dart';
 import '../Screens/my_teams_screen.dart';
+import '../Screens/password_and_security_screen.dart';
 import '../Screens/profile_screen.dart';
 import '../Screens/profile_setting_screen.dart';
 import '../Screens/proposals_screen.dart';
@@ -46,9 +49,11 @@ class MyRouter {
   static var taxInformationScreen = "/taxInformationScreen";
   static var contactInfoScreen = "/contactInfoScreen";
   static var profileSettingScreen = "/profileSettingScreen";
+  static var passwordAndSecurityScreen = "/passwordAndSecurityScreen";
+  static var helpAndSupportScreen = "/helpAndSupportScreen";
 
   static var route = [
-    GetPage(name: '/', page: () => const ProfileSettingScreen()),
+    GetPage(name: '/', page: () => const JobDetailsScreen()),
     GetPage(name: MyRouter.splashScreen, page: () => const SignUpScreen()),
     GetPage(name: MyRouter.loginScreen, page: () => const LoginScreen()),
     GetPage(name: MyRouter.loginScreen, page: () => const LoginScreen()),
@@ -71,5 +76,7 @@ class MyRouter {
     GetPage(name: MyRouter.taxInformationScreen, page: () => const TaxInformationScreen()),
     GetPage(name: MyRouter.contactInfoScreen, page: () => const ContactInfoScreen()),
     GetPage(name: MyRouter.profileSettingScreen, page: () => const ProfileSettingScreen()),
+    GetPage(name: MyRouter.passwordAndSecurityScreen, page: () => const PasswordAndSecurityScreen()),
+    GetPage(name: MyRouter.helpAndSupportScreen, page: () => const HelpAndSupportScreen()),
   ];
 }
