@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_rx/src/rx_types/rx_types.dart';
+import 'package:unifyfreelancer/Screens/radio_button_job_detils.dart';
 
 import '../../resources/app_theme.dart';
 import '../../widgets/custom_appbar.dart';
@@ -19,7 +19,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
   final _receiveController = TextEditingController();
   final _letterController = TextEditingController();
 
-  String gendar = "";
+  String? time;
 
   @override
   Widget build(BuildContext context) {
@@ -584,93 +584,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                         showDialog(
                           context: context,
                           builder: (BuildContext context) {
-                            return StatefulBuilder(
-                              builder: (context, snapshot) {
-                                return Expanded(
-
-                                  child: AlertDialog(
-                                    content: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      children: [
-                                        RadioListTile(
-                                          title: Text(
-                                            "More than 6 Month",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: AppTheme.settingsTextColor),
-                                          ),
-                                          contentPadding: const EdgeInsets.all(0),
-                                          dense: true,
-                                          visualDensity: VisualDensity(horizontal: -4, vertical: -4),
-                                          value: "male",
-                                          groupValue: gendar,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              gendar = value.toString();
-                                            });
-                                          },
-                                        ),
-                                        RadioListTile(
-                                          title: Text(
-                                            "3 to 6 month",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: AppTheme.settingsTextColor),
-                                          ),
-                                          contentPadding: const EdgeInsets.all(0),
-                                          dense: true,
-                                          visualDensity:
-                                          const VisualDensity(horizontal: -4, vertical: -4),
-                                          value: "female",
-                                          groupValue: gendar,
-                                          onChanged: (value) {
-
-                                          },
-                                        ),
-                                        RadioListTile(
-                                          title: Text(
-                                            "3 to 6 month",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: AppTheme.settingsTextColor),
-                                          ),
-                                          contentPadding: const EdgeInsets.all(0),
-                                          dense: true,
-                                          visualDensity:
-                                          const VisualDensity(horizontal: -4, vertical: -4),
-                                          value: "other",
-                                          groupValue: gendar,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              gendar = value.toString();
-                                            });
-                                          },
-                                        ),
-                                        RadioListTile(
-                                          title: Text(
-                                            "Less than 1 month",
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                color: AppTheme.settingsTextColor),
-                                          ),
-                                          contentPadding: const EdgeInsets.all(0),
-                                          dense: true,
-                                          visualDensity:
-                                          const VisualDensity(horizontal: -4, vertical: -4),
-                                          value: "other",
-                                          groupValue: gendar,
-                                          onChanged: (value) {
-                                            setState(() {
-                                              gendar = value.toString();
-                                            });
-                                          },
-                                        ),
-                                      ],
-                                    )
-                                  ),
-                                );
-                              }
-                            );
+                            return RadioWidget();
                           },
                         );
                       },
@@ -757,3 +671,5 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
     );
   }
 }
+
+

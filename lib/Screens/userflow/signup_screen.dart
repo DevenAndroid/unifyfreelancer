@@ -161,7 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 12.h,
                           ),
-                          Row(
+                          /*Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -179,6 +179,90 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 width: 10.w,
                               ),
                             ],
+                          ),*/
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Checkbox(
+                                  materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
+                                  value: acceptTermsOrPrivacy,
+                                  activeColor: AppTheme.primaryColor,
+                                  onChanged: (newValue) {
+                                    setState(() {
+                                      acceptTermsOrPrivacy = newValue!;
+                                    });
+                                  }),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Expanded(
+                                child: RichText(
+                                  text: TextSpan(
+                                    style: const TextStyle(
+                                        color: AppTheme.primaryColor,
+                                        fontSize: 10),
+                                    children: [
+                                      const TextSpan(
+                                        text:
+                                        'Yes, I Understand and agree to the ',
+                                        style: TextStyle(
+                                          color: Color(0xff172B4D),
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                          text: 'Unify Terms and of Services ',
+                                          style: const TextStyle(
+                                            color: AppTheme.primaryColor,
+                                            fontSize: 12,
+                                            //decoration: TextDecoration.underline,
+                                          ),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              //Get.toNamed(MyRouter.termsScreen);
+                                            }),
+                                      const TextSpan(
+                                        text: 'including the ',
+                                        style: TextStyle(
+                                          color: Color(0xff172B4D),
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                          text: 'User Agreement ',
+                                          style: const TextStyle(
+                                            fontSize: 12,
+                                            color: AppTheme.primaryColor,
+                                            //decoration: TextDecoration.underline,
+                                          ),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              //Get.toNamed(MyRouter.termsScreen);
+                                            }),
+                                      const TextSpan(
+                                        text: 'and ',
+                                        style: TextStyle(
+                                          color: Color(0xff172B4D),
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                      TextSpan(
+                                          text: 'Privacy Policy',
+                                          style: const TextStyle(
+                                            fontSize: 12,
+                                            //decoration: TextDecoration.underline,
+                                          ),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              //Get.toNamed(MyRouter.termsScreen);
+                                            }),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                           SizedBox(
                             height: 12.h,
@@ -189,6 +273,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 showError('plz accept conditions.');
                               } else {
                                 showError('Call your Api Here.');
+                                Get.toNamed(MyRouter.homeScreen);
                               }
                             }
                           }, deviceWidth, 50),

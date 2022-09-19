@@ -16,6 +16,7 @@ class AppTheme {
   static const Color hintTextColor = Color(0xff431444);
   static const Color borderColor = Color(0xffD9D9D9);
   static const Color settingsTextColor = Color(0xff1F1F1F);
+  static const Color subText = Color(0xff828282);
 
 }
 

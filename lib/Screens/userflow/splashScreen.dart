@@ -5,6 +5,8 @@ import 'package:get/get.dart';
 import 'package:unifyfreelancer/resources/app_assets.dart';
 import 'package:unifyfreelancer/routers/my_router.dart';
 
+
+
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
@@ -17,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 5), () async {
-      Get.offAllNamed(MyRouter.loginScreen);
+      Get.offAllNamed(MyRouter.onBoardingScreen);
     });
   }
 

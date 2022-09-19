@@ -127,7 +127,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         CommonButton(AppStrings.buttonLogin, () {
                           if (_formKey.currentState!.validate()) {
+                            Get.toNamed(MyRouter.signUpScreen);
                             showError('SuccessFully log In.');
+
                           }
                         }, deviceWidth, 50),
                         SizedBox(

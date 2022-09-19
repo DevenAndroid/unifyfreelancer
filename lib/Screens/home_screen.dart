@@ -4,6 +4,8 @@ import 'package:unifyfreelancer/resources/app_theme.dart';
 import 'package:unifyfreelancer/widgets/common_outline_button.dart';
 import 'package:unifyfreelancer/widgets/custom_appbar.dart';
 
+import '../widgets/appDrawer.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
@@ -39,6 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           titleText: "Jobs",
         ),
       ),
+      drawer: AppDrawerScreen(),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Padding(
