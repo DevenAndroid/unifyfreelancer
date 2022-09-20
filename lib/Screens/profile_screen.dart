@@ -1,3 +1,8 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,6 +18,153 @@ class ProfileScreen extends StatefulWidget {
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+
+  List<File> _files01 =[];
+
+  void _pickMultipleFiles() async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
+
+    if (result != null) {
+      List<File> _files = result.paths.map((path) => File(path!)).toList();
+      setState(() {
+        _files01 = _files;
+      });
+    } else {
+      // User canceled the picker
+    }
+  }
+
+
+  FilePickerResult? uploadDocument1;
+  String? uploadDocumentFileName1;
+  PlatformFile? uploadDocumentPickedFile1;
+  bool uploadDocumentLoading1 = false;
+  File? uploadDocumentDisplay1;
+  String? sendingDocumentInAPI1;
+
+  void uploadDocumentFunction1() async {
+    try {
+      setState(() {
+        uploadDocumentLoading1 = true;
+      });
+      uploadDocument1 = await FilePicker.platform.pickFiles(
+          type: FileType.custom,
+          allowMultiple: false,
+          allowedExtensions: ['jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc']);
+      if (uploadDocument1 != null) {
+        uploadDocumentFileName1 = uploadDocument1!.files.first.name;
+        uploadDocumentPickedFile1 = uploadDocument1!.files.first;
+        uploadDocumentDisplay1 = File(uploadDocumentPickedFile1!.path.toString());
+
+        List<int> uploadDocument64 =
+        uploadDocumentDisplay1!.readAsBytesSync();
+
+        sendingDocumentInAPI1 = base64Encode(uploadDocument64);
+
+        print("Base 64 image===> $sendingDocumentInAPI1");
+
+        if (kDebugMode) {
+          print("File name $uploadDocumentFileName1");
+        }
+      }
+
+      setState(() {
+        uploadDocumentLoading1 = false;
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  FilePickerResult? uploadDocument2;
+  String? uploadDocumentFileName2;
+  PlatformFile? uploadDocumentPickedFile2;
+  bool uploadDocumentLoading2 = false;
+  File? uploadDocumentDisplay2;
+  String? sendingDocumentInAPI2;
+
+  void uploadDocumentFunction2() async {
+    try {
+      setState(() {
+        uploadDocumentLoading2 = true;
+      });
+      uploadDocument2 = await FilePicker.platform.pickFiles(
+          type: FileType.custom,
+          allowMultiple: false,
+          allowedExtensions: ['jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc']);
+      if (uploadDocument2 != null) {
+        uploadDocumentFileName2 = uploadDocument2!.files.first.name;
+        uploadDocumentPickedFile2 = uploadDocument2!.files.first;
+        uploadDocumentDisplay2 = File(uploadDocumentPickedFile2!.path.toString());
+
+        List<int> uploadDocument64 =
+        uploadDocumentDisplay2!.readAsBytesSync();
+
+        sendingDocumentInAPI2 = base64Encode(uploadDocument64);
+
+        print("Base 64 image===> $sendingDocumentInAPI2");
+
+        if (kDebugMode) {
+          print("File name $uploadDocumentFileName2");
+        }
+      }
+
+      setState(() {
+        uploadDocumentLoading2 = false;
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  FilePickerResult? uploadDocument3;
+  String? uploadDocumentFileName3;
+  PlatformFile? uploadDocumentPickedFile3;
+  bool uploadDocumentLoading3 = false;
+  File? uploadDocumentDisplay3;
+  String? sendingDocumentInAPI3;
+
+  void uploadDocumentFunction3() async {
+    try {
+      setState(() {
+        uploadDocumentLoading3 = true;
+      });
+      uploadDocument3 = await FilePicker.platform.pickFiles(
+          type: FileType.custom,
+          allowMultiple: false,
+          allowedExtensions: ['jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc']);
+      if (uploadDocument3 != null) {
+        uploadDocumentFileName3 = uploadDocument3!.files.first.name;
+        uploadDocumentPickedFile3 = uploadDocument3!.files.first;
+        uploadDocumentDisplay3 = File(uploadDocumentPickedFile3!.path.toString());
+
+        List<int> uploadDocument64 =
+        uploadDocumentDisplay3!.readAsBytesSync();
+
+        sendingDocumentInAPI3 = base64Encode(uploadDocument64);
+
+        print("Base 64 image===> $sendingDocumentInAPI3");
+
+        if (kDebugMode) {
+          print("File name $uploadDocumentFileName3");
+        }
+      }
+
+      setState(() {
+        uploadDocumentLoading3 = false;
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     var deviceWidth = MediaQuery.of(context).size.width;
@@ -584,16 +736,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(
                           width: 10.w,
                         ),
-                        Container(
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppTheme.whiteColor,
-                              border: Border.all(color: Color(0xff707070))),
-                          child: Icon(
-                            Icons.add,
-                            color: AppTheme.primaryColor,
-                            size: 15,
+                        InkWell(
+                          onTap: ()=>_pickMultipleFiles(),
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppTheme.whiteColor,
+                                border: Border.all(color: Color(0xff707070))),
+                            child: Icon(
+                              Icons.add,
+                              color: AppTheme.primaryColor,
+                              size: 15,
+                            ),
                           ),
                         ),
                       ],
@@ -606,23 +761,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       child: ListView.builder(
                           shrinkWrap: true,
                           physics: AlwaysScrollableScrollPhysics(),
-                          itemCount: 10,
+                          itemCount: _files01.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
-                            return Container(
-                              margin: EdgeInsets.all(5),
-                              height: 100,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.rectangle,
-                                  color: AppTheme.whiteColor,
-                                  border: Border.all(
-                                    color: Color(0xff707070),
-                                  ),
-                                  image: DecorationImage(
-                                      fit: BoxFit.cover,
-                                      image: NetworkImage(
-                                          "https://images.unsplash.com/photo-1659686353676-8699585ff4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"))),
+                            return SizedBox(
+                                child: _pickMultipleFiles==null ? Container(
+                                  margin: EdgeInsets.all(5),
+                                  height: 100,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.rectangle,
+                                      color: AppTheme.whiteColor,
+                                      border: Border.all(
+                                        color: Color(0xff707070),
+                                      ),
+                                      image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: NetworkImage(
+                                              "https://images.unsplash.com/photo-1659686353676-8699585ff4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"))),
+                                )
+                                    :
+                                Container(
+                                  margin: EdgeInsets.all(5),
+                                  height: 100,
+                                  width: 100,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.rectangle,
+                                    color: AppTheme.whiteColor,
+                                    image: DecorationImage(image: FileImage(_files01[index]),fit: BoxFit.cover
+                                    ),),
+                                )
                             );
                           }),
                     )
@@ -661,16 +829,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(
                           width: 10.w,
                         ),
-                        Container(
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppTheme.whiteColor,
-                              border: Border.all(color: Color(0xff707070))),
-                          child: Icon(
-                            Icons.add,
-                            color: AppTheme.primaryColor,
-                            size: 15,
+                        InkWell(
+                          onTap: ()=>uploadDocumentFunction1(),
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppTheme.whiteColor,
+                                border: Border.all(color: Color(0xff707070))),
+                            child: Icon(
+                              Icons.add,
+                              color: AppTheme.primaryColor,
+                              size: 15,
+                            ),
                           ),
                         ),
                       ],
@@ -678,32 +849,43 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(
                       height: 10.h,
                     ),
-                    Container(
-                      margin: EdgeInsets.all(5),
-                      height: 70,
-                      width: 70,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: AppTheme.whiteColor,
-                          border: Border.all(
-                            color: Color(0xff707070),
-                          ),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1659686353676-8699585ff4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"))),
-                    ),
+
                     SizedBox(
-                      height: 10.h,
+                        child: uploadDocument1 == null ? Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              color: AppTheme.whiteColor,
+                                  ),
+                          child: Column(
+                            children: [
+                              Image.asset("assets/images/testimonials.png", height: 100,
+                                width: 100,),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                "Showcase your skills with non-Unify client testimonials",
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xff363636)),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ):
+                        Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: AppTheme.whiteColor,
+                            image: DecorationImage(image: FileImage(uploadDocumentDisplay1!),fit: BoxFit.cover
+                            ),),
+                        )
                     ),
-                    Text(
-                      "Showcase your skills with non-Unify client testimonials",
-                      style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w300,
-                          color: Color(0xff363636)),
-                      textAlign: TextAlign.center,
-                    ),
+
                   ],
                 )),
             Container(
@@ -739,16 +921,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(
                           width: 10.w,
                         ),
-                        Container(
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppTheme.whiteColor,
-                              border: Border.all(color: Color(0xff707070))),
-                          child: Icon(
-                            Icons.add,
-                            color: AppTheme.primaryColor,
-                            size: 15,
+                        InkWell(
+                          onTap: ()=>uploadDocumentFunction2(),
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppTheme.whiteColor,
+                                border: Border.all(color: Color(0xff707070))),
+                            child: Icon(
+                              Icons.add,
+                              color: AppTheme.primaryColor,
+                              size: 15,
+                            ),
                           ),
                         ),
                       ],
@@ -756,32 +941,44 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(
                       height: 10.h,
                     ),
-                    Container(
-                      margin: EdgeInsets.all(5),
-                      height: 70,
-                      width: 70,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: AppTheme.whiteColor,
-                          border: Border.all(
-                            color: Color(0xff707070),
-                          ),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1659686353676-8699585ff4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"))),
-                    ),
                     SizedBox(
-                      height: 10.h,
+                        child: uploadDocument2 == null ? Container(
+                          margin: EdgeInsets.all(5),
+
+                          decoration: BoxDecoration(
+                              shape: BoxShape.rectangle,
+                              color: AppTheme.whiteColor,
+                              ),
+                          child: Column(
+                            children: [
+                              Image.asset("assets/images/certification.png",height: 100,
+                                width: 100,),
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                "Listing your certifications can help prove your specific knowledge or abilities. (+10%) You can add them manually",
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xff363636)),
+                                textAlign: TextAlign.center,
+                              ),
+
+                            ],
+                          ),
+                          ):
+                        Container(
+                          height: 100,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: AppTheme.whiteColor,
+                            image: DecorationImage(image: FileImage(uploadDocumentDisplay2!),fit: BoxFit.cover
+                            ),),
+                        )
                     ),
-                    Text(
-                      "Listing your certifications can help prove your specific knowledge or abilities. (+10%) You can add them manually",
-                      style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w300,
-                          color: Color(0xff363636)),
-                      textAlign: TextAlign.center,
-                    ),
+
                   ],
                 )),
             Container(
@@ -804,6 +1001,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
                 child: Column(
                   children: [
+
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -817,16 +1015,22 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         SizedBox(
                           width: 10.w,
                         ),
-                        Container(
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: AppTheme.whiteColor,
-                              border: Border.all(color: Color(0xff707070))),
-                          child: Icon(
-                            Icons.add,
-                            color: AppTheme.primaryColor,
-                            size: 15,
+                        InkWell(
+                          onTap: (){
+                            uploadDocumentFunction3();
+
+                          },
+                          child: Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: AppTheme.whiteColor,
+                                border: Border.all(color: Color(0xff707070))),
+                            child: Icon(
+                              Icons.add,
+                              color: AppTheme.primaryColor,
+                              size: 15,
+                            ),
                           ),
                         ),
                       ],
@@ -834,32 +1038,46 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     SizedBox(
                       height: 10.h,
                     ),
-                    Container(
-                      margin: EdgeInsets.all(5),
-                      height: 70,
-                      width: 70,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.rectangle,
-                          color: AppTheme.whiteColor,
-                          border: Border.all(
-                            color: Color(0xff707070),
-                          ),
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: NetworkImage(
-                                  "https://images.unsplash.com/photo-1659686353676-8699585ff4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"))),
-                    ),
                     SizedBox(
-                      height: 10.h,
+                      child: uploadDocument3 == null ? Container(
+                        margin: EdgeInsets.all(5),
+
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: AppTheme.whiteColor,
+                          ),
+                        child: Column(
+                          children: [
+                            Image.asset("assets/images/files.png",height: 100,
+                              width: 100,),
+                            SizedBox(
+                              height: 10.h,
+                            ),
+                            Text(
+                              "Add any other experiences that help you stand out",
+                              style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w300,
+                                  color: Color(0xff363636)),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+
+                      ):
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: AppTheme.whiteColor,
+                          image: DecorationImage(image: FileImage(uploadDocumentDisplay3!),fit: BoxFit.cover
+                        ),),
+                      )
                     ),
-                    Text(
-                      "Add any other experiences that help you stand out",
-                      style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w300,
-                          color: Color(0xff363636)),
-                      textAlign: TextAlign.center,
-                    ),
+
+
+                    
                   ],
                 )),
           ],

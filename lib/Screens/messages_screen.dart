@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import '../resources/app_theme.dart';
+import '../routers/my_router.dart';
+import '../widgets/appDrawer.dart';
 import '../widgets/custom_appbar.dart';
 
 class MessagesScreen extends StatefulWidget {
@@ -22,8 +25,9 @@ class _MessagesScreenState extends State<MessagesScreen> {
             titleText: "Messages",
           ),
         ),
+        drawer: AppDrawerScreen(),
         body: ListView.builder(
-            padding: EdgeInsets.symmetric(vertical: 10),
+            padding: EdgeInsets.only(top: 10,bottom: 50),
             shrinkWrap: true,
             itemCount: 10,
             physics: AlwaysScrollableScrollPhysics(),
@@ -69,46 +73,49 @@ class _MessagesScreenState extends State<MessagesScreen> {
                       SizedBox(
                         width: 15.h,
                       ),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Allen growd",
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600,
-                                      color: AppTheme.greyTextColor2),
-                                ),
-                                Text(
-                                  "12:02 PM",
-                                  style: TextStyle(
-                                      fontSize: 12,
-                                      color: AppTheme.greyTextColor2),
-                                )
-                              ],
-                            ),
-                            SizedBox(
-                              height: 5.h,
-                            ),
-                            Text(
-                              "Ecommerce website development",
-                              style: TextStyle(
-                                  fontSize: 13, color: Color(0xff2F2643)),
-                            ),
-                            SizedBox(
-                              height: 5.h,
-                            ),
-                            Text(
-                              "You: Thanku",
-                              style: TextStyle(
-                                  fontSize: 12, color: AppTheme.greyTextColor2),
-                            ),
-                          ],
+                      InkWell(
+                        onTap: ()=>Get.toNamed(MyRouter.chatScreen),
+                        child: Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Allen growd",
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppTheme.greyTextColor2),
+                                  ),
+                                  Text(
+                                    "12:02 PM",
+                                    style: TextStyle(
+                                        fontSize: 12,
+                                        color: AppTheme.greyTextColor2),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              Text(
+                                "Ecommerce website development",
+                                style: TextStyle(
+                                    fontSize: 13, color: Color(0xff2F2643)),
+                              ),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              Text(
+                                "You: Thanku",
+                                style: TextStyle(
+                                    fontSize: 12, color: AppTheme.greyTextColor2),
+                              ),
+                            ],
+                          ),
                         ),
                       )
                     ],

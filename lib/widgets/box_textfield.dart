@@ -54,32 +54,28 @@ class _BoxTextFieldState extends State<BoxTextField> {
   @override
   Widget build(BuildContext context) {
     RxString hintTextValue = widget.hintText.value.obs;
-    var obscureText = '';
     switch (hintTextValue.value) {
       case 'Password':
         {
-          obscureText = hintTextValue.value;
         }
         break;
       case 'Current Password':
         {
-          obscureText = hintTextValue.value;
         }
         break;
       case 'New Password':
         {
-          obscureText = hintTextValue.value;
         }
         break;
       case 'Confirm Password':
         {
-          obscureText = hintTextValue.value;
         }
         break;
     }
 
     return Obx(() {
       return TextFormField(
+
           onChanged: widget.onChanged,
           onEditingComplete: widget.onEditingCompleted,
           // autofocus: autofocus,
@@ -93,12 +89,14 @@ class _BoxTextFieldState extends State<BoxTextField> {
           keyboardType: widget.keyboardType,
           controller: widget.controller,
           decoration: InputDecoration(
+            filled: true,
+            fillColor: AppTheme.primaryColor.withOpacity(.05),
             hintText: widget.hintText.value,
             errorText: widget.errorText,
             labelText: widget.labelText,
             labelStyle: const TextStyle(color: Colors.black),
             prefixIcon: widget.prefix,
-            /*suffixIcon: GestureDetector(
+            suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
                     widget.obSecure!.value = !widget.obSecure!.value;
@@ -109,25 +107,24 @@ class _BoxTextFieldState extends State<BoxTextField> {
                 child: Icon(
                   widget.suffixIcon,
                   color: AppTheme.primaryColor,
-                )),*/
+                )),
 
             // labelStyle: TextStyle(fontSize: lableFontSize()),
             // labelText: label,
-            hintStyle: const TextStyle(color: Colors.blueGrey, fontSize: 15),
+            hintStyle: const TextStyle(color: Color(0xff596681), fontSize: 15),
             contentPadding:
-                const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+                const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
             focusedBorder: OutlineInputBorder(
               borderSide:
-                  const BorderSide(color: AppTheme.primaryColor, width: 1.0),
+                   BorderSide(color: AppTheme.primaryColor.withOpacity(.15), width: 1.0),
               borderRadius: BorderRadius.circular(8),
             ),
             enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.grey, width: 1.0),
+              borderSide: BorderSide(color: AppTheme.primaryColor.withOpacity(.15), width: 1.0),
               borderRadius: BorderRadius.circular(8),
             ),
             border: OutlineInputBorder(
-                borderSide:
-                    const BorderSide(color: AppTheme.primaryColor, width: 1.0),
+                borderSide: BorderSide(color: AppTheme.primaryColor.withOpacity(.15), width: 1.0),
                 borderRadius: BorderRadius.circular(8.0)),
 
             // enabledBorder: textFieldfocused(),

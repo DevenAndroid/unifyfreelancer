@@ -5,6 +5,7 @@ import 'package:unifyfreelancer/Screens/radio_button_job_detils.dart';
 import '../../resources/app_theme.dart';
 import '../../widgets/custom_appbar.dart';
 
+import '../widgets/appDrawer.dart';
 import '../widgets/common_outline_button.dart';
 
 class JobDetailsScreen extends StatefulWidget {
@@ -34,6 +35,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
           titleText: "Job Details",
         ),
       ),
+      drawer: AppDrawerScreen(),
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(

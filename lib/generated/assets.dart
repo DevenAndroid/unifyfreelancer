@@ -21,6 +21,8 @@ class Assets {
   static const String iconTax = 'assets/icon/tax.png';
   static const String iconUnifyFreelancer = 'assets/icon/unifyFreelancer.png';
   static const String imagesCard = 'assets/images/card.png';
+  static const String imagesCertification = 'assets/images/certification.png';
+  static const String imagesFiles = 'assets/images/files.png';
   static const String imagesInvestment = 'assets/images/investment.png';
   static const String imagesLoginBg = 'assets/images/loginBg.png';
   static const String imagesLogo = 'assets/images/Logo.png';
@@ -28,5 +30,6 @@ class Assets {
   static const String imagesOnBoarding02 = 'assets/images/onBoarding_02.png';
   static const String imagesOnBoarding03 = 'assets/images/onBoarding_03.png';
   static const String imagesSplashBgImage = 'assets/images/splashBgImage.png';
+  static const String imagesTestimonials = 'assets/images/testimonials.png';
 
 }

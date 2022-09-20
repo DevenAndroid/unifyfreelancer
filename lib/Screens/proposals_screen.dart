@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_theme.dart';
+import '../widgets/appDrawer.dart';
 import '../widgets/common_outline_button.dart';
 import '../widgets/custom_appbar.dart';
 
@@ -15,14 +16,8 @@ class ProposalsScreen extends StatefulWidget {
 class _ProposalsScreenState extends State<ProposalsScreen> {
   @override
   Widget build(BuildContext context) {
-    var deviceHeight = MediaQuery
-        .of(context)
-        .size
-        .height;
-    var deviceWidth = MediaQuery
-        .of(context)
-        .size
-        .width;
+    var deviceHeight = MediaQuery.of(context).size.height;
+    var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
@@ -32,6 +27,7 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
           titleText: "Proposals",
         ),
       ),
+      drawer: AppDrawerScreen(),
       body: Column(
         children: [
           SizedBox(height: 10.h),
@@ -55,7 +51,7 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
                       ),
                       automaticIndicatorColorAdjustment: true,
                       unselectedLabelStyle:
-                      const TextStyle(color: Color(0xff707070)),
+                          const TextStyle(color: Color(0xff707070)),
                       tabs: [
                         Tab(
                           child: Text(
@@ -96,83 +92,71 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
                             border: Border(
                                 top: BorderSide(
                                     color: AppTheme.pinkText, width: 0.5))),
-                        height: deviceHeight-145,
+                        height: deviceHeight - 185,
                         child: TabBarView(
                             children: List.generate(
-                              4,
-                                  (index) =>
-                                  ListView.builder(
-                                    shrinkWrap: true,
-                                    physics: const BouncingScrollPhysics(),
-                                    itemCount: 10,
-                                    padding: EdgeInsets.only(bottom: 20),
-                                    itemBuilder: (BuildContext context,
-                                        int index) {
-                                      return Container(
-                                        margin: const EdgeInsets.only(
-                                            top: 15, right: 10, left: 10),
-                                        width: deviceWidth,
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20, vertical: 20),
-                                        decoration: BoxDecoration(
-                                          color: AppTheme.whiteColor,
-                                          borderRadius: const BorderRadius
-                                              .all(
-                                            Radius.circular(10),
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Colors.grey.withOpacity(
-                                                  0.2),
-                                              spreadRadius: 2,
-                                              blurRadius: 4,
-                                              offset: const Offset(
-                                                  0,
-                                                  3), // changes position of shadow
-                                            ),
-                                          ],
-                                        ),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              "WordPress theme design",
-                                              style: TextStyle(
-                                                  fontSize: 17,
-                                                  color: AppTheme
-                                                      .darkBlueText),
-                                            ),
-                                            SizedBox(
-                                              height: deviceHeight * .01,
-                                            ),
-                                            Text(
-                                              "Received Aug 10,02022",
-                                              style: TextStyle(
-                                                  fontSize: 17,
-                                                  color: AppTheme
-                                                      .greyTextColor),
-                                            ),
-                                            SizedBox(
-                                              height: deviceHeight * .01,
-                                            ),
-                                            Text(
-                                              "2 days ago",
-                                              style: TextStyle(
-                                                  fontSize: 17,
-                                                  color: AppTheme
-                                                      .greyTextColor),
-                                            ),
-
-                                          ],
-                                        ),
-                                      );
-                                    },
+                          4,
+                          (index) => ListView.builder(
+                            shrinkWrap: true,
+                            physics: const BouncingScrollPhysics(),
+                            itemCount: 10,
+                            padding: EdgeInsets.only(bottom: 20),
+                            itemBuilder: (BuildContext context, int index) {
+                              return Container(
+                                margin: const EdgeInsets.only(
+                                    top: 15, right: 10, left: 10),
+                                width: deviceWidth,
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 20, vertical: 20),
+                                decoration: BoxDecoration(
+                                  color: AppTheme.whiteColor,
+                                  borderRadius: const BorderRadius.all(
+                                    Radius.circular(10),
                                   ),
-                            ))),
-
-
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.grey.withOpacity(0.2),
+                                      spreadRadius: 2,
+                                      blurRadius: 4,
+                                      offset: const Offset(
+                                          0, 3), // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Text(
+                                      "WordPress theme design",
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          color: AppTheme.darkBlueText),
+                                    ),
+                                    SizedBox(
+                                      height: deviceHeight * .01,
+                                    ),
+                                    Text(
+                                      "Received Aug 10,02022",
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          color: AppTheme.greyTextColor),
+                                    ),
+                                    SizedBox(
+                                      height: deviceHeight * .01,
+                                    ),
+                                    Text(
+                                      "2 days ago",
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          color: AppTheme.greyTextColor),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ))),
                   ])),
         ],
       ),

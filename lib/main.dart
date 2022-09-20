@@ -29,7 +29,9 @@ class MyApp extends StatelessWidget {
           initialRoute: "/splash",
           getPages: MyRouter.route,
           theme: ThemeData(
-              primarySwatch: primaryColorShades, fontFamily: 'Poppins'),
+              primarySwatch: primaryColorShades,
+              fontFamily: 'Poppins',
+          ),
         );
       },
     );

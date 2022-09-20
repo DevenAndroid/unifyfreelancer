@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../resources/app_theme.dart';
+import '../routers/my_router.dart';
+import '../widgets/appDrawer.dart';
 import '../widgets/common_outline_button.dart';
 import '../widgets/custom_appbar.dart';
 
@@ -26,6 +29,7 @@ class _ContractsScreenState extends State<ContractsScreen> {
           titleText: "Contracts",
         ),
       ),
+      drawer: AppDrawerScreen(),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Padding(
@@ -155,7 +159,7 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                 border: Border(
                                     top: BorderSide(
                                         color: AppTheme.pinkText, width: 0.5))),
-                            height: deviceHeight - deviceWidth * .55,
+                            height: deviceHeight - deviceWidth * .8,
                             child: TabBarView(
                               children: [
                                 ListView.builder(
@@ -258,30 +262,37 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                                                         .black,
                                                                   ),
                                                                 )),
-                                                            const Text(
-                                                              'View work diary',
-                                                              style: TextStyle(
-                                                                  fontSize: 16,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  color: AppTheme
-                                                                      .darkBlueText),
+                                                            InkWell(
+                                                              onTap: ()=>Get.toNamed(MyRouter.contractsDetailsScreen),
+                                                              child: const Text(
+                                                                'View work diary',
+                                                                style: TextStyle(
+                                                                    fontSize: 16,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    color: AppTheme
+                                                                        .darkBlueText),
+                                                              ),
                                                             ),
                                                             SizedBox(
                                                               height:
                                                                   deviceWidth *
                                                                       .03,
                                                             ),
-                                                            const Text(
-                                                              'Send Message',
-                                                              style: TextStyle(
-                                                                  fontSize: 16,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                  color: AppTheme
-                                                                      .darkBlueText),
+                                                            InkWell(
+                                                              onTap: ()=>Get.toNamed(MyRouter.chatScreen),
+                                                              child: const Text(
+
+                                                                'Send Message',
+                                                                style: TextStyle(
+                                                                    fontSize: 16,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                    color: AppTheme
+                                                                        .darkBlueText),
+                                                              ),
                                                             ),
                                                             SizedBox(
                                                               height:
@@ -371,12 +382,14 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                             height: deviceHeight * .025,
                                           ),
                                           CustomOutlineButton(
-                                            title: "See TImesheet",
+                                            title: "See Timesheet",
                                             backgroundColor:
                                                 AppTheme.primaryColor,
                                             textColor: AppTheme.whiteColor,
                                             expandedValue: true,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Get.toNamed(MyRouter.contractsDetailsScreen);
+                                            },
                                           )
                                         ],
                                       ),
@@ -588,12 +601,14 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                             height: deviceHeight * .025,
                                           ),
                                           CustomOutlineButton(
-                                            title: "See TImesheet",
+                                            title: "See Timesheet",
                                             backgroundColor:
                                                 AppTheme.primaryColor,
                                             textColor: AppTheme.whiteColor,
                                             expandedValue: true,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Get.toNamed(MyRouter.contractsDetailsScreen);
+                                            },
                                           )
                                         ],
                                       ),
@@ -862,7 +877,9 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                                 AppTheme.primaryColor,
                                             textColor: AppTheme.whiteColor,
                                             expandedValue: true,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Get.toNamed(MyRouter.contractsDetailsScreen);
+                                            },
                                           )
                                         ],
                                       ),
@@ -1131,7 +1148,9 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                                 AppTheme.primaryColor,
                                             textColor: AppTheme.whiteColor,
                                             expandedValue: true,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Get.toNamed(MyRouter.chatScreen);
+                                            },
                                           )
                                         ],
                                       ),
@@ -1187,7 +1206,9 @@ class _ContractsScreenState extends State<ContractsScreen> {
                                             title: "View ALL Contracts",
                                             backgroundColor:
                                                 AppTheme.primaryColor,
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Get.toNamed(MyRouter.contractsDetailsScreen);
+                                            },
                                             expandedValue: true,
                                             textColor: AppTheme.whiteColor,
                                           )

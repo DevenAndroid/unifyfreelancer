@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:unifyfreelancer/resources/app_theme.dart';
 
 class CustomAppbar extends StatelessWidget {
@@ -14,6 +15,8 @@ class CustomAppbar extends StatelessWidget {
     this.isProfileImage = false,
     this.isLikeButton = false,
   });
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -30,26 +33,31 @@ class CustomAppbar extends StatelessWidget {
       ),
       backgroundColor: AppTheme.whiteColor,
       leading: isProfileImage == true
-          ? Card(
-              elevation: 2,
-              margin: const EdgeInsets.all(7),
-              shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(100))),
-              child: Container(
-                margin: const EdgeInsets.all(3),
-                decoration: const BoxDecoration(
-                    color: AppTheme.blackColor,
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"),
-                        fit: BoxFit.cover)),
-                height: 25.h,
-                width: 25.w,
+          ? InkWell(
+        onTap: (){
+          Scaffold.of(context).openDrawer();
+        },
+            child: Card(
+                elevation: 2,
+                margin: const EdgeInsets.all(7),
+                shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(100))),
+                child: Container(
+                  margin: const EdgeInsets.all(3),
+                  decoration: const BoxDecoration(
+                      color: AppTheme.blackColor,
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"),
+                          fit: BoxFit.cover)),
+                  height: 25.h,
+                  width: 25.w,
+                ),
               ),
-            )
+          )
           : IconButton(
-              onPressed: () {},
+              onPressed: ()=>Get.back(),
               icon: const Icon(
                 Icons.arrow_back_ios,
                 color:Color(0xff756C87),
@@ -65,7 +73,7 @@ class CustomAppbar extends StatelessWidget {
         isLikeButton == true
             ? Container(
                 margin: const EdgeInsets.all(7),
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   border: Border.all(color: AppTheme.borderColor),
                   shape: BoxShape.circle,

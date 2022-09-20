@@ -1,3 +1,6 @@
+
+import 'package:country_pickers/country.dart';
+import 'package:country_pickers/country_pickers.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,6 +28,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   bool acceptTermsOrPrivacy = false;
+  RxBool eyeHide = false.obs;
+
+  String dropDownValue = 'All Transactions';
+
+  var items = [
+    'India',
+    'USA',
+    'Uk',
+    'Shri Lanka',
+    'Pakistan',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +58,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               Image.asset(AppAssets.loginBg),
               Positioned(
-                  top: 32.h,
+                  top: 55.h,
                   right: 0,
                   left: 0,
                   child: Image.asset(
                     AppAssets.splashLogo,
+                    height: 90,
                   )),
               Positioned(
-                top: 200.h,
+                // top: 200.h,
                 right: 16.0,
                 left: 16.0,
+                bottom: 40.h,
                 child: Container(
-                    height: 436.h,
+                    // height: 436.h,
                     // margin: EdgeInsets.symmetric(horizontal: 16.0),
                     padding: EdgeInsets.only(
                         left: 20.h, right: 20.h, top: 20.h, bottom: 10.h),
@@ -128,39 +144,55 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 12.h,
                           ),
-                          BoxTextField(
-                            obSecure: false.obs,
-                            prefix: Icon(
-                              Icons.lock_outline,
-                              color: AppTheme.darkBlueText,
-                            ),
-                            controller: passwordController,
-                            hintText: AppStrings.password.obs,
-                            validator: MultiValidator([
-                              RequiredValidator(
-                                  errorText: 'password is required'),
-                              MinLengthValidator(8,
-                                  errorText:
-                                      'password must be at least 8 digits long'),
-                              PatternValidator(r'(?=.*?[#?!@$%^&*-])',
-                                  errorText:
-                                      'passwords must have at least one special character')
-                            ]),
-                          ),
-                          SizedBox(
-                            height: 12.h,
-                          ),
-                          BoxTextField(
-                              obSecure: false.obs,
+                          Obx(() {
+                            return BoxTextField(
+                              obSecure: eyeHide,
                               prefix: Icon(
-                                Icons.flag,
+                                Icons.lock_outline,
                                 color: AppTheme.darkBlueText,
                               ),
+                              suffixIcon: eyeHide == false
+                                  ? Icons.visibility_off_outlined
+                                  : Icons.remove_red_eye_outlined,
                               controller: passwordController,
-                              hintText: "Country Dropdown".obs),
+                              hintText: AppStrings.password.obs,
+                              validator: MultiValidator([
+                                RequiredValidator(
+                                    errorText: 'password is required'),
+                                MinLengthValidator(8,
+                                    errorText:
+                                        'password must be at least 8 digits long'),
+                                PatternValidator(r'(?=.*?[#?!@$%^&*-])',
+                                    errorText:
+                                        'passwords must have at least one special character')
+                              ]),
+                            );
+                          }),
                           SizedBox(
                             height: 12.h,
                           ),
+                          Container(
+                            width: deviceWidth,
+                            decoration: BoxDecoration(
+                                color: AppTheme.primaryColor.withOpacity(.05),
+                                borderRadius: BorderRadius.circular(8),
+                                border: Border.all(
+                                    color:
+                                        AppTheme.primaryColor.withOpacity(.15),
+                                    width: 1)),
+                            child: CountryPickerDropdown(
+                              isExpanded: true,
+                              initialValue: 'in',
+                              itemBuilder: _buildDropdownItem,
+                              onValuePicked: (Country country) {
+                                print("${country.name}");
+                              },
+                            ),
+                          ),
+                          SizedBox(
+                            height: 12.h,
+                          ),
+
                           /*Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -186,7 +218,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             children: [
                               Checkbox(
                                   materialTapTargetSize:
-                                  MaterialTapTargetSize.shrinkWrap,
+                                      MaterialTapTargetSize.shrinkWrap,
                                   value: acceptTermsOrPrivacy,
                                   activeColor: AppTheme.primaryColor,
                                   onChanged: (newValue) {
@@ -206,7 +238,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                     children: [
                                       const TextSpan(
                                         text:
-                                        'Yes, I Understand and agree to the ',
+                                            'Yes, I Understand and agree to the ',
                                         style: TextStyle(
                                           color: Color(0xff172B4D),
                                           fontSize: 12,
@@ -265,7 +297,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             ],
                           ),
                           SizedBox(
-                            height: 12.h,
+                            height: 10.h,
                           ),
                           CommonButton(AppStrings.buttonCreateAccount, () {
                             if (_formKey.currentState!.validate()) {
@@ -273,12 +305,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                 showError('plz accept conditions.');
                               } else {
                                 showError('Call your Api Here.');
-                                Get.toNamed(MyRouter.homeScreen);
+                                Get.toNamed(MyRouter.bottomNavbar);
                               }
                             }
                           }, deviceWidth, 50),
                           SizedBox(
-                            height: 25.h,
+                            height: 16.h,
                           ),
                         ],
                       ),
@@ -321,4 +353,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+
+  Widget _buildDropdownItem(Country country) => Container(
+        child: Row(
+          children: <Widget>[
+            SizedBox(
+              width: 12.0,
+            ),
+            CountryPickerUtils.getDefaultFlagImage(country),
+            SizedBox(
+              width: 8.0,
+            ),
+            // Text("+${country.phoneCode}(${country.isoCode})"),
+            Expanded(
+              child: Text(
+                "${country.name}",
+                style: TextStyle(overflow: TextOverflow.ellipsis),
+              ),
+            ),
+          ],
+        ),
+      );
 }

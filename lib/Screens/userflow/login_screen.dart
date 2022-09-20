@@ -39,16 +39,19 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               Image.asset(AppAssets.loginBg),
               Positioned(
-                  top: 45.h,
+                  top: 90.h,
                   right: 0,
                   left: 0,
                   child: Image.asset(
                     AppAssets.splashLogo,
+                    height: 90,
+
                   )),
               Positioned(
-                top: 220.h,
+                // top: 180.h,
                 right: 16.0,
                 left: 16.0,
+                bottom: 40.h,
                 child: Container(
                     // height: 400.h,
                     // margin: EdgeInsets.symmetric(horizontal: 16.0),
@@ -88,7 +91,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   errorText: 'enter a valid email address')
                             ])),
                         SizedBox(
-                          height: 12.h,
+                          height: 16.h,
                         ),
                         BoxTextField(
                           prefix: Icon(
@@ -110,7 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ]),
                         ),
                         SizedBox(
-                          height: 20.h,
+                          height: 12.h,
                         ),
                         Align(
                           alignment: Alignment.centerRight,
@@ -123,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                         SizedBox(
-                          height: 30.h,
+                          height: 24.h,
                         ),
                         CommonButton(AppStrings.buttonLogin, () {
                           if (_formKey.currentState!.validate()) {
@@ -188,7 +191,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     )),
               ),
               Positioned(
-                  bottom: 20.h,
+                  bottom: 10.h,
                   right: 0,
                   left: 0,
                   child: Align(

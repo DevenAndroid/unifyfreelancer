@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../resources/app_theme.dart';
 import '../../widgets/custom_appbar.dart';
+import '../widgets/appDrawer.dart';
 import '../widgets/common_outline_button.dart';
 
 class SaveJobsScreen extends StatefulWidget {
@@ -38,6 +39,7 @@ class _SaveJobsScreenState extends State<SaveJobsScreen> {
           titleText: "Save Jobs",
         ),
       ),
+      drawer: AppDrawerScreen(),
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(

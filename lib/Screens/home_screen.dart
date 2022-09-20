@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:unifyfreelancer/resources/app_theme.dart';
+import 'package:unifyfreelancer/routers/my_router.dart';
 import 'package:unifyfreelancer/widgets/common_outline_button.dart';
 import 'package:unifyfreelancer/widgets/custom_appbar.dart';
 
@@ -253,7 +255,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 title: "Send Proposal",
                                                 backgroundColor: AppTheme.whiteColor,
                                                 textColor: AppTheme.primaryColor,
-                                                onPressed: () {},
+                                                onPressed: () =>Get.toNamed(MyRouter.jobDetailsScreen),
                                               ),
                                             ],
                                           ),

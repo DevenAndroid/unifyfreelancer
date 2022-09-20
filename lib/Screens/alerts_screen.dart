@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:unifyfreelancer/widgets/common_outline_button.dart';
 
 import '../resources/app_theme.dart';
+import '../widgets/appDrawer.dart';
 import '../widgets/custom_appbar.dart';
 
 class AlertsScreen extends StatefulWidget {
@@ -16,7 +17,6 @@ class _AlertsScreenState extends State<AlertsScreen> {
   @override
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
-    var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
@@ -26,6 +26,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
           titleText: "Alerts",
         ),
       ),
+      drawer: AppDrawerScreen(),
       body: ListView.builder(
         itemCount: 3,
         itemBuilder: (context, index) {

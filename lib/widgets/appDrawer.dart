@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '../resources/app_theme.dart';
+import '../routers/my_router.dart';
 
 
 class AppDrawerScreen extends StatefulWidget {
@@ -113,7 +115,8 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                   fontWeight: FontWeight.w500,
                   color: AppTheme.textColor),
             ),
-            onTap: () {},
+            onTap: ()=> Get.toNamed(MyRouter.profileScreen),
+
           ),
           const Divider(
             color: Color(0xff6D2EF1),
@@ -136,7 +139,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                   fontWeight: FontWeight.w500,
                   color: AppTheme.textColor),
             ),
-            onTap: () {},
+            onTap: ()=> Get.toNamed(MyRouter.reportsScreen),
           ),
           const Divider(
             color: Color(0xff6D2EF1),
@@ -159,7 +162,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                   fontWeight: FontWeight.w500,
                   color: AppTheme.textColor),
             ),
-            onTap: () {},
+            onTap: ()=> Get.toNamed(MyRouter.unifyQualificationsScreen),
           ),
           const Divider(
             color: Color(0xff6D2EF1),
@@ -182,7 +185,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                   fontWeight: FontWeight.w500,
                   color: AppTheme.textColor),
             ),
-            onTap: () {},
+            onTap: ()=> Get.toNamed(MyRouter.settingsScreen),
           ),
           const Divider(
             color: Color(0xff6D2EF1),
@@ -205,7 +208,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                   fontWeight: FontWeight.w500,
                   color: AppTheme.textColor),
             ),
-            onTap: () {},
+            onTap: ()=> Get.toNamed(MyRouter.helpAndSupportScreen),
           ),
           const Divider(
             color: Color(0xff6D2EF1),
@@ -228,7 +231,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                   fontWeight: FontWeight.w500,
                   color: AppTheme.textColor),
             ),
-            onTap: () {},
+            onTap: ()=> Get.toNamed(MyRouter.loginScreen),
           ),
         ],
       ),
