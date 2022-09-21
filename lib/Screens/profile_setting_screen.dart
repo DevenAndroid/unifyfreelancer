@@ -52,14 +52,14 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                       Text(
                         "My Profile",
                         style: TextStyle(
-                            fontSize: 18.sp,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.textColor),
                       ),
                       Text(
                         "View as others see it",
                         style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.primaryColor),
                       ),
@@ -240,7 +240,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           Text(
                             "Want to keep your earnings private?",
                             style: TextStyle(
-                                fontSize: 13.sp,
+                                fontSize: 12.sp,
                                 color: AppTheme.textColor.withOpacity(.63)),
                           ),
                           SizedBox(
@@ -249,7 +249,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           Text(
                             "Upgrade to a Freelancer plus membership to enable this setting.",
                             style: TextStyle(
-                                fontSize: 13.sp,
+                                fontSize: 12.sp,
                                 color: AppTheme.textColor.withOpacity(.63)),
                           ),
                         ],
@@ -260,7 +260,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                   Text(
                     "Experience level",
                     style: TextStyle(
-                        fontSize: 18.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                         color: AppTheme.textColor),
                   ),
@@ -289,13 +289,13 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           title: Text(
                             "Entry",
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color: AppTheme.settingsTextColor),
                           ),
                           subtitle: Text(
                             "I am relatively new to this field",
-                            style: TextStyle(fontSize: 14, color: Color(0xff828282)),
+                            style: TextStyle(fontSize: 12, color: Color(0xff828282)),
                           ),
                           contentPadding: const EdgeInsets.all(0),
                           dense: true,
@@ -312,13 +312,13 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           title: Text(
                             "Intermediate",
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color: AppTheme.settingsTextColor),
                           ),
                           subtitle: Text(
                             "I have substantial experience in this field",
-                            style: TextStyle(fontSize: 14, color: Color(0xff828282)),
+                            style: TextStyle(fontSize: 12, color: Color(0xff828282)),
                           ),
                           contentPadding: const EdgeInsets.all(0),
                           dense: true,
@@ -336,13 +336,13 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           title: Text(
                             "Expert",
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                                 fontWeight: FontWeight.w500,
                                 color: AppTheme.settingsTextColor),
                           ),
                           subtitle: Text(
                             "I have comprehensive and deep expertise in this field",
-                            style: TextStyle(fontSize: 14, color: Color(0xff828282)),
+                            style: TextStyle(fontSize: 12, color: Color(0xff828282)),
                           ),
                           contentPadding: const EdgeInsets.all(0),
                           dense: true,
@@ -387,7 +387,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                             Text(
                               "Categories",
                               style: TextStyle(
-                                  fontSize: 18.sp,
+                                  fontSize: 16.sp,
                                   fontWeight: FontWeight.w600,
                                   color: AppTheme.textColor),
                             ),
@@ -414,7 +414,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                         Text(
                           "Web, Mobile & Software Dev",
                           style: TextStyle(
-                              fontSize: 15.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w600,
                               color: AppTheme.settingsTextColor),
                         ),
@@ -456,7 +456,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                         Text(
                           "Specialized Profiles",
                           style: TextStyle(
-                              fontSize: 18.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                               color: AppTheme.textColor),
                         ),
@@ -464,7 +464,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                         Text(
                           "0 out of 2 published",
                           style: TextStyle(
-                              fontSize: 14.sp,
+                              fontSize: 12.sp,
                               color: Color(0xff828282)),
                         ),
                         SizedBox(
@@ -475,11 +475,11 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                       text: TextSpan(
                         text: "Create up to two different versions of your profile to more effectively highlight your individual specialties.",
                         style: TextStyle(
-                            fontSize: 14.sp,
+                            fontSize: 12.sp,
                             color: Color(0xff828282)),
                         children: const <TextSpan>[
                           TextSpan(text: 'Learn More', style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: AppTheme.primaryColor),),
                         ],

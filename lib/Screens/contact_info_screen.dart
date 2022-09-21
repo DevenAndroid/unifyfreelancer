@@ -182,7 +182,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                 Text(
                   "Additional accounts",
                   style: TextStyle(
-                      fontSize: 18.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: AppTheme.textColor),
                 ),
@@ -329,7 +329,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                       Text(
                         "Phone",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: Color(0xff393939)),
                       ),
                       SizedBox(
@@ -338,7 +338,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                       Text(
                         "+91 98-76-54-3210",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.settingsTextColor),
                       ),
@@ -354,7 +354,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                       Text(
                         "Time Zone",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: Color(0xff393939)),
                       ),
                       SizedBox(
@@ -363,7 +363,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                       Text(
                         "UTC+05:30 Mumbai, Kolkata, Chennai, New Delhi",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.settingsTextColor),
                       ),
@@ -379,7 +379,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                       Text(
                         "Address",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             color: Color(0xff393939)),
                       ),
                       SizedBox(
@@ -388,7 +388,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
                       Text(
                         "India",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 14.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.settingsTextColor),
                       ),

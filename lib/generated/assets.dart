@@ -6,7 +6,7 @@ class Assets {
   static const String fontsPoppins-Regular = 'assets/fonts/Poppins-Regular.ttf';
   static const String iconAlerts = 'assets/icon/alerts.png';
   static const String iconAppleIcon = 'assets/icon/apple_icon.png';
-  static const String iconBadge = 'assets/icon/badge.png';
+  static const String iconBadge = 'assets/icon/badge.svg';
   static const String iconContracts = 'assets/icon/Contracts.svg';
   static const String iconCrown = 'assets/icon/crown.png';
   static const String iconDegree = 'assets/icon/degree.png';

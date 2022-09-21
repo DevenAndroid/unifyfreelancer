@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:unifyfreelancer/resources/app_theme.dart';
 
@@ -67,7 +68,7 @@ class CustomAppbar extends StatelessWidget {
         style: TextStyle(
             fontWeight: FontWeight.w600,
             color: AppTheme.textColor,
-            fontSize: 20.sp),
+            fontSize: 18.sp),
       ),
       actions: [
         isLikeButton == true
@@ -94,7 +95,7 @@ class CustomAppbar extends StatelessWidget {
                   ),
                   height: 20.h,
                   width: 20.w,
-                  child: Image.asset('assets/icon/heart.png')
+                  child: SvgPicture.asset("assets/icon/heart.svg")
                 ),
               )
             : const SizedBox()

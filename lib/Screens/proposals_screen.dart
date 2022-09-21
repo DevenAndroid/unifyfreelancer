@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_theme.dart';
 import '../widgets/appDrawer.dart';
-import '../widgets/common_outline_button.dart';
 import '../widgets/custom_appbar.dart';
 
 class ProposalsScreen extends StatefulWidget {
@@ -130,7 +129,8 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
                                     Text(
                                       "WordPress theme design",
                                       style: TextStyle(
-                                          fontSize: 17,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
                                           color: AppTheme.darkBlueText),
                                     ),
                                     SizedBox(
@@ -139,7 +139,8 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
                                     Text(
                                       "Received Aug 10,02022",
                                       style: TextStyle(
-                                          fontSize: 17,
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w500,
                                           color: AppTheme.greyTextColor),
                                     ),
                                     SizedBox(
@@ -148,7 +149,7 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
                                     Text(
                                       "2 days ago",
                                       style: TextStyle(
-                                          fontSize: 17,
+                                          fontSize: 12,
                                           color: AppTheme.greyTextColor),
                                     ),
                                   ],

@@ -46,8 +46,8 @@ class _PasswordAndSecurityScreenState extends State<PasswordAndSecurityScreen> {
                             Text(
                               "Password",
                               style: TextStyle(
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
                                   color: AppTheme.textColor),
                             ),
                             Container(
@@ -132,8 +132,8 @@ class _PasswordAndSecurityScreenState extends State<PasswordAndSecurityScreen> {
                             Text(
                               "Two-step verification options",
                               style: TextStyle(
-                                  fontSize: 18.sp,
-                                  fontWeight: FontWeight.w600,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
                                   color: AppTheme.textColor),
                             ),
                             Container(

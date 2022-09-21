@@ -49,7 +49,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                 Text(
                   "Troubleshoot mobile App",
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.w600,
                       color: AppTheme.primaryColor),
                 ),
@@ -62,15 +62,17 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     title: Text(
                       "Push Notification issues",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.only(left: 20,right: 40),
                           child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.")),
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
+                          ,style: TextStyle(
+                              fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
                       SizedBox(
                         height: 10.h,
                       )
@@ -86,15 +88,16 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     title: Text(
                       "Login issues",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.only(left: 20,right: 40),
                           child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.")),
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
+                              fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
                       SizedBox(
                         height: 10.h,
                       )
@@ -110,15 +113,16 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     title: Text(
                       "Loading  issues",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.only(left: 20,right: 40),
                           child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.")),
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
+                              fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
                       SizedBox(
                         height: 10.h,
                       )
@@ -134,15 +138,16 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     title: Text(
                       "Payment Problem",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.only(left: 20,right: 40),
                           child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.")),
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
+                              fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
                       SizedBox(
                         height: 10.h,
                       )
@@ -158,15 +163,16 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     title: Text(
                       "Billing  issues",
                       style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          padding: EdgeInsets.only(left: 20,right: 40),
                           child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.")),
+                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
+                              fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
                       SizedBox(
                         height: 10.h,
                       )

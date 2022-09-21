@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../resources/app_theme.dart';
@@ -78,7 +79,10 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                     ],
                   ),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Scaffold.of(context).closeDrawer();
+
+                      },
                       icon: Icon(
                         Icons.clear,
                         color: AppTheme.whiteColor,
@@ -146,15 +150,11 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
           ),
           ListTile(
             leading: Container(
-                padding: EdgeInsets.all(5),
+                padding: EdgeInsets.all(12),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppTheme.primaryColor.withOpacity(.15)),
-                child: Image.asset(
-                  "assets/icon/badge.png",
-                  height: 25,
-                  width: 25,
-                )),
+                child: SvgPicture.asset("assets/icon/badge.svg")),
             title: Text(
               'Unify Qualifications',
               style: TextStyle(

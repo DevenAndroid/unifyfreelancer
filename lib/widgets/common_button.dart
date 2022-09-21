@@ -23,6 +23,7 @@ class CommonButton extends StatelessWidget {
         ),
       ),
       child: MaterialButton(
+
         minWidth: buttonWidth,
         height: buttonHeight,
         padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),

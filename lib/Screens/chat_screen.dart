@@ -59,7 +59,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                     Text(
                                       "Alex K.",
                                       style: TextStyle(
-                                          fontSize: 22,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.bold,
                                           color: AppTheme.greyTextColor2),
                                     ),
@@ -88,7 +88,7 @@ class _ChatScreenState extends State<ChatScreen> {
                               "Derby, United Kingdom",
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  fontSize: 15,
+                                  fontSize: 14,
                                   color: Color(0xff2F2643)),
                             ),
                           ],
@@ -130,7 +130,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                       child: Padding(
                                         padding: EdgeInsets.only(left: 25),
                                         child: Text(
-                                            "Our motivation is to enable computerized connections through versatility. By planning and creating ",
+                                            "Our motivation is to enable computerized connections through versatility. By planning and creating ",style: TextStyle(fontSize: 12,color: Color(0xff151021)),
                                             textAlign: TextAlign.right),
                                       )),
                                 ),
@@ -172,7 +172,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                     child: Padding(
                                       padding: EdgeInsets.only(right: 25),
                                       child: Text(
-                                        "Our motivation is to enable computerized connections through versatility. By planning and creating ",
+                                        "Our motivation is to enable computerized connections through versatility. By planning and creating ",style: TextStyle(fontSize: 12,color: Color(0xff151021)),
                                       ),
                                     )),
                               ),

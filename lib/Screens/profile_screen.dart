@@ -20,6 +20,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
 
   List<File> _files01 =[];
+  var loading = null;
 
   void _pickMultipleFiles() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
@@ -28,6 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       List<File> _files = result.paths.map((path) => File(path!)).toList();
       setState(() {
         _files01 = _files;
+        loading = 1;
       });
     } else {
       // User canceled the picker
@@ -233,7 +235,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Text(
                             "Hannah Finn",
                             style: TextStyle(
-                                fontSize: 22.sp,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff180095)),
                           ),
@@ -348,7 +350,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Text(
                               "\$100K",
                               style: TextStyle(
-                                  fontSize: 26,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xff0777FD)),
                             )
@@ -385,7 +387,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Text(
                                 "26",
                                 style: TextStyle(
-                                    fontSize: 26,
+                                    fontSize: 20,
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xff6B428B)),
                               )
@@ -435,7 +437,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Text(
                               "2065",
                               style: TextStyle(
-                                  fontSize: 26,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xffF66C6C)),
                             )
@@ -469,7 +471,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             ),
                             Text("26",
                                 style: TextStyle(
-                                  fontSize: 26,
+                                  fontSize: 20,
                                   fontWeight: FontWeight.w600,
                                   color: AppTheme.pinkText,
                                 ))
@@ -507,7 +509,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           child: Text(
                             "Website designer and developer",
                             style: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.w600,
                                 color: AppTheme.darkBlueText),
                           ),
@@ -541,7 +543,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Text(
                       "View More",
                       style: TextStyle(
-                          fontSize: 14.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.primaryColor),
                     ),
@@ -638,7 +640,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Text(
                           "\$3.000",
                           style: TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w600,
                               color: AppTheme.darkBlueText),
                         ),
@@ -648,7 +650,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Text(
                           "Fixed Price",
                           style: TextStyle(
-                              fontSize: 16.sp,
+                              fontSize: 14.sp,
                               fontWeight: FontWeight.w600,
                               color: AppTheme.darkBlueText),
                         ),
@@ -758,41 +760,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     SizedBox(
                       height: 120.h,
-                      child: ListView.builder(
+                      child: loading == null ? Container(
+                        margin: EdgeInsets.all(5),
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            color: AppTheme.whiteColor,
+                            border: Border.all(
+                              color: Color(0xff707070),
+                            ),
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                image: NetworkImage(
+                                    "https://images.unsplash.com/photo-1659686353676-8699585ff4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"))),
+                      )
+                           : ListView.builder(
                           shrinkWrap: true,
                           physics: AlwaysScrollableScrollPhysics(),
                           itemCount: _files01.length,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (context, index) {
-                            return SizedBox(
-                                child: _pickMultipleFiles==null ? Container(
-                                  margin: EdgeInsets.all(5),
-                                  height: 100,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.rectangle,
-                                      color: AppTheme.whiteColor,
-                                      border: Border.all(
-                                        color: Color(0xff707070),
-                                      ),
-                                      image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: NetworkImage(
-                                              "https://images.unsplash.com/photo-1659686353676-8699585ff4c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"))),
-                                )
-                                    :
-                                Container(
-                                  margin: EdgeInsets.all(5),
-                                  height: 100,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.rectangle,
-                                    color: AppTheme.whiteColor,
-                                    image: DecorationImage(image: FileImage(_files01[index]),fit: BoxFit.cover
-                                    ),),
-                                )
+                            return Container(
+                              margin: EdgeInsets.all(5),
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.rectangle,
+                                color: AppTheme.whiteColor,
+                                image: DecorationImage(image: FileImage(_files01[index]),fit: BoxFit.cover
+                                ),),
                             );
                           }),
+                      
                     )
                   ],
                 )),
@@ -867,7 +867,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Text(
                                 "Showcase your skills with non-Unify client testimonials",
                                 style: TextStyle(
-                                    fontSize: 14.sp,
+                                    fontSize: 13.sp,
                                     fontWeight: FontWeight.w300,
                                     color: Color(0xff363636)),
                                 textAlign: TextAlign.center,
@@ -959,7 +959,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               Text(
                                 "Listing your certifications can help prove your specific knowledge or abilities. (+10%) You can add them manually",
                                 style: TextStyle(
-                                    fontSize: 14.sp,
+                                    fontSize: 13.sp,
                                     fontWeight: FontWeight.w300,
                                     color: Color(0xff363636)),
                                 textAlign: TextAlign.center,
@@ -1056,7 +1056,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             Text(
                               "Add any other experiences that help you stand out",
                               style: TextStyle(
-                                  fontSize: 14.sp,
+                                  fontSize: 13.sp,
                                   fontWeight: FontWeight.w300,
                                   color: Color(0xff363636)),
                               textAlign: TextAlign.center,

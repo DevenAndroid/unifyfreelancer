@@ -63,7 +63,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                     Text(
                       "Default Team",
                       style: TextStyle(
-                          fontSize: 18.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
@@ -74,7 +74,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                     Text(
                       "This team will be used for offers sent by clients directly",
                       style:
-                          TextStyle(fontSize: 14.sp, color: Color(0xff6B6B6B)),
+                          TextStyle(fontSize: 13.sp, color: Color(0xff6B6B6B)),
                     ),
                     SizedBox(
                       height: 10.h,
@@ -147,7 +147,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                     Text(
                       "My Team",
                       style: TextStyle(
-                          fontSize: 18.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
@@ -157,7 +157,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                     Text(
                       "Teams are used to group contract by department or manager",
                       style:
-                          TextStyle(fontSize: 14.sp, color: Color(0xff6B6B6B)),
+                          TextStyle(fontSize: 13.sp, color: Color(0xff6B6B6B)),
                     ),
                     SizedBox(
                       height: 15.h,
@@ -165,7 +165,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                     Text(
                       "Team Name",
                       style: TextStyle(
-                          fontSize: 18.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),
@@ -190,7 +190,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                                   Text(
                                     "Financial Account:",
                                     style: TextStyle(
-                                        fontSize: 14.sp,
+                                        fontSize: 13.sp,
                                         fontWeight: FontWeight.w600,
                                         color: AppTheme.settingsTextColor),
                                   ),
@@ -200,7 +200,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                                   Text(
                                     "John Doe (57659600)",
                                     style: TextStyle(
-                                        fontSize: 14.sp,
+                                        fontSize: 13.sp,
                                         color: Color(0xff6B6B6B)),
                                   ),
                                 ],

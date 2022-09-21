@@ -53,7 +53,7 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
               Text(
                 "Manage billing method",
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: AppTheme.settingsTextColor),
               ),
@@ -63,7 +63,7 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
               Text(
                 "Add, update, or remove your billing methods",
                 style:
-                    TextStyle(fontSize: 14, color: AppTheme.settingsTextColor),
+                    TextStyle(fontSize: 12, color: AppTheme.settingsTextColor),
               ),
               SizedBox(
                 height: 10.h,
@@ -81,7 +81,7 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
               Text(
                 "Primary",
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w600,
                     color: AppTheme.settingsTextColor),
               ),
@@ -91,7 +91,7 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
               Text(
                 "Your primary billing method is used for all recurring payments",
                 style:
-                    TextStyle(fontSize: 14, color: AppTheme.settingsTextColor),
+                    TextStyle(fontSize: 12, color: AppTheme.settingsTextColor),
               ),
               SizedBox(
                 height: 10.h,
@@ -116,7 +116,7 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
                       Text(
                         "Visa ending in 1234",
                         style: TextStyle(
-                            fontSize: 14, color: AppTheme.settingsTextColor),
+                            fontSize: 12, color: AppTheme.settingsTextColor),
                       ),
                     ],
                   ),

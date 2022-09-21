@@ -67,7 +67,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 Text(
                                   "Billing & Payment",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff1F1F1F)),
                                 ),
@@ -76,7 +76,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: AppTheme.blackColor,
-                              size: 20,
+                              size: 15,
                             )
                           ],
                         ),
@@ -113,7 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 Text(
                                   "Contact info",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff1F1F1F)),
                                 ),
@@ -122,7 +122,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: AppTheme.blackColor,
-                              size: 20,
+                              size: 15,
                             )
                           ],
                         ),
@@ -155,7 +155,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 Text(
                                   "Tax Information",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff1F1F1F)),
                                 ),
@@ -164,7 +164,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: AppTheme.blackColor,
-                              size: 20,
+                              size: 15,
                             )
                           ],
                         ),
@@ -201,7 +201,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 Text(
                                   "Profile setting",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff1F1F1F)),
                                 ),
@@ -210,7 +210,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: AppTheme.blackColor,
-                              size: 20,
+                              size: 15,
                             )
                           ],
                         ),
@@ -247,7 +247,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 Text(
                                   "Get paid",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff1F1F1F)),
                                 ),
@@ -256,7 +256,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: AppTheme.blackColor,
-                              size: 20,
+                              size: 15,
                             )
                           ],
                         ),
@@ -293,7 +293,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 Text(
                                   "My Teams ",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff1F1F1F)),
                                 ),
@@ -302,7 +302,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: AppTheme.blackColor,
-                              size: 20,
+                              size: 15,
                             )
                           ],
                         ),
@@ -338,7 +338,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 Text(
                                   "Password & security",
                                   style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0xff1F1F1F)),
                                 ),
@@ -347,7 +347,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Icon(
                               Icons.arrow_forward_ios_outlined,
                               color: AppTheme.blackColor,
-                              size: 20,
+                              size: 15,
                             )
                           ],
                         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:unifyfreelancer/resources/app_theme.dart';
 import 'package:unifyfreelancer/routers/my_router.dart';
@@ -82,16 +83,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           horizontal: 20, vertical: 15),
                       suffixIcon: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 5),
-                        padding: const EdgeInsets.all(4),
+                        padding: const EdgeInsets.all(10),
                         decoration: const BoxDecoration(
                           color: AppTheme.primaryColor,
                           shape: BoxShape.circle,
                         ),
-                        child: const Icon(
-                          Icons.search,
-                          size: 25,
-                          color: Colors.white,
-                        ),
+                        child: SvgPicture.asset(
+                          'assets/icon/Search.svg',
+                          color: AppTheme.whiteColor,
+                        )
                       )),
                 ),
               ),
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "My Feed",
                                 style: TextStyle(
-                                    fontSize: 14.sp,
+                                    fontSize: 12.sp,
                                     fontWeight: FontWeight.w600),
                               ),
                             ),
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Best Matches",
                                 style: TextStyle(
-                                    fontSize: 14.sp,
+                                    fontSize: 12.sp,
                                     fontWeight: FontWeight.w600),
                               ),
                             ),
@@ -138,7 +138,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Text(
                                 "Most Recent",
                                 style: TextStyle(
-                                    fontSize: 14.sp,
+                                    fontSize: 12.sp,
                                     fontWeight: FontWeight.w600),
                               ),
                             )
@@ -202,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Text(
                                             "IOS And Android  Mobile App Developer",
                                             style: TextStyle(
-                                              fontSize: 20.sp,
+                                              fontSize: 18.sp,
                                               fontWeight: FontWeight.w600,
                                               color: AppTheme.darkBlueText,
                                             ),
@@ -223,23 +223,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+
                                             children: [
                                               Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
                                                     "\$140.00",
                                                     style: TextStyle(
-                                                        fontSize: 24.sp,
+                                                        fontSize: 20.sp,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                         color: AppTheme
                                                             .darkBlueText),
                                                   ),
-                                                  SizedBox(
-                                                    height: deviceHeight * .008,
-                                                  ),
+
                                                   Text(
                                                     "Budget",
                                                     style: TextStyle(

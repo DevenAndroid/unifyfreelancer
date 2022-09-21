@@ -481,7 +481,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                           ),
                           hintText: '\$',
                           focusColor: AppTheme.primaryColor,
-                          suffixIcon: _bidController.text.length == 0
+                          suffixIcon: _receiveController.text.length == 0
                               ? Align(
                                   alignment: Alignment.centerRight,
                                   child: Padding(

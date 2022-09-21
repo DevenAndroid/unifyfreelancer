@@ -55,7 +55,7 @@ class _GetPaidScreenState extends State<GetPaidScreen> {
                       Text(
                         "Balance Due",
                         style: TextStyle(
-                            fontSize: 18.sp,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.settingsTextColor),
                       ),
@@ -65,7 +65,7 @@ class _GetPaidScreenState extends State<GetPaidScreen> {
                       Text(
                         "Your balance is \$0.00",
                         style: TextStyle(
-                            fontSize: 16.sp, color: AppTheme.settingsTextColor),
+                            fontSize: 13.sp, color: AppTheme.settingsTextColor),
                       ),
                     ],
                   ),
@@ -124,7 +124,7 @@ class _GetPaidScreenState extends State<GetPaidScreen> {
                       Text(
                         "Payment Details",
                         style: TextStyle(
-                            fontSize: 18.sp,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.settingsTextColor),
                       ),
@@ -151,7 +151,7 @@ class _GetPaidScreenState extends State<GetPaidScreen> {
                   Text(
                     "You have not set up any payment method yet.",
                     style: TextStyle(
-                        fontSize: 16, color: AppTheme.settingsTextColor),
+                        fontSize: 13, color: AppTheme.settingsTextColor),
                   ),
                   SizedBox(
                     height: 10.h,
@@ -165,7 +165,7 @@ class _GetPaidScreenState extends State<GetPaidScreen> {
                   Text(
                     "Tell us how you want to receive your funds. It may take up to 3 days to activate your payment method.",
                     style: TextStyle(
-                        fontSize: 13,
+                        fontSize: 12,
                         color: AppTheme.textColor.withOpacity(.63)),
                   ),
                 ],

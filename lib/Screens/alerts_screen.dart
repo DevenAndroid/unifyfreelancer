@@ -88,7 +88,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
                                 Text(
                                   "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
                                   style: TextStyle(
-                                    fontSize: 13.sp,
+                                    fontSize: 12.sp,
                                     color: AppTheme.textColor,
                                   ),
                                 ),

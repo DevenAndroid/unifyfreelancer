@@ -161,7 +161,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                           Text(
                                             "Transaction History",
                                             style: TextStyle(
-                                                fontSize: 18,
+                                                fontSize: 16,
                                                 color: AppTheme.textColor,
                                                 fontWeight: FontWeight.w600),
                                           ),
@@ -213,8 +213,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                           children: [
                                                             InkWell(
                                                               onTap: () =>
-                                                                  Navigator.pop(
-                                                                      context),
+                                                                  Navigator.pop(context),
                                                               child: Icon(
                                                                 Icons.clear,
                                                                 color: AppTheme
@@ -249,7 +248,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                           decoration:
                                                               InputDecoration(
                                                             hintStyle: TextStyle(
-                                                                fontSize: 16,
+                                                                fontSize: 12,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
@@ -269,7 +268,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                                     horizontal:
                                                                         8,
                                                                     vertical:
-                                                                        16),
+                                                                        12),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
@@ -317,7 +316,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                                             .toString(),
                                                                         style: TextStyle(
                                                                             fontSize:
-                                                                                16,
+                                                                                12,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
                                                                             color: AppTheme.primaryColor)),
@@ -341,7 +340,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                           decoration:
                                                               InputDecoration(
                                                             hintStyle: TextStyle(
-                                                                fontSize: 16,
+                                                                fontSize: 12,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
@@ -361,7 +360,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                                     horizontal:
                                                                         8,
                                                                     vertical:
-                                                                        16),
+                                                                        12),
                                                             focusedBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
@@ -409,7 +408,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                                             .toString(),
                                                                         style: TextStyle(
                                                                             fontSize:
-                                                                                16,
+                                                                                12,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
                                                                             color: AppTheme.primaryColor)),
@@ -532,7 +531,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               child: Text(
                                                 "Posted by",
                                                 style: TextStyle(
-                                                    fontSize: 16,
+                                                    fontSize: 14,
                                                     fontWeight: FontWeight.w600,
                                                     color: AppTheme.textColor),
                                               ),
@@ -614,7 +613,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                             Text(
                                               "No transactions meet your selected criteria",
                                               style: TextStyle(
-                                                  fontSize: 16,
+                                                  fontSize: 14,
                                                   fontWeight: FontWeight.w600,
                                                   color: Color(0xff00065A)),
                                             ),

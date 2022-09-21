@@ -108,7 +108,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           contents[currentIndex].title.toString(),
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.darkBlueText,
                           ),
