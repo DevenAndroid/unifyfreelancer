@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:unifyfreelancer/routers/my_router.dart';
 
 import '../resources/app_theme.dart';
 import '../widgets/custom_appbar.dart';
@@ -80,35 +82,38 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                           Text(
                             "Jolly Smith",
                             style: TextStyle(
-                                fontSize: 20.sp,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.w600,
                                 color: AppTheme.textColor),
                           ),
                           Text(
                             "United States - Wed 8:10",
                             style: TextStyle(
-                                fontSize: 14.sp, color: AppTheme.textColor),
+                                fontSize: 13.sp, color: AppTheme.textColor),
                           ),
                           Text(
                             "AM",
                             style: TextStyle(
-                                fontSize: 14.sp, color: AppTheme.textColor),
+                                fontSize: 13.sp, color: AppTheme.textColor),
                           ),
                         ],
                       )
                     ],
                   ),
-                  Container(
-                    padding: EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: AppTheme.whiteColor,
-                      border: Border.all(color: AppTheme.primaryColor),
-                    ),
-                    child: Icon(
-                      Icons.message,
-                      color: AppTheme.primaryColor,
-                      size: 15,
+                  InkWell(
+                    onTap: ()=>Get.toNamed(MyRouter.chatScreen),
+                    child: Container(
+                      padding: EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: AppTheme.whiteColor,
+                        border: Border.all(color: AppTheme.primaryColor),
+                      ),
+                      child: Icon(
+                        Icons.message,
+                        color: AppTheme.primaryColor,
+                        size: 15,
+                      ),
                     ),
                   )
                 ],
@@ -119,7 +124,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
               Text(
                 "UI/UX Design And Laravel Development.",
                 style: TextStyle(
-                    fontSize: 18.sp,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: AppTheme.darkBlueText),
               ),
@@ -219,7 +224,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                 Text(
                                                   "1:10 hrs",
                                                   style: TextStyle(
-                                                      fontSize: 16,
+                                                      fontSize: 14,
                                                       color:
                                                           AppTheme.darkBlueText,
                                                       fontWeight:
@@ -249,7 +254,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                 Text(
                                                   "6:20 hrs",
                                                   style: TextStyle(
-                                                      fontSize: 16,
+                                                      fontSize: 14,
                                                       color:
                                                           AppTheme.darkBlueText,
                                                       fontWeight:
@@ -279,7 +284,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                 Text(
                                                   "7:55 hrs",
                                                   style: TextStyle(
-                                                      fontSize: 16,
+                                                      fontSize: 14,
                                                       color:
                                                           AppTheme.darkBlueText,
                                                       fontWeight:
@@ -292,7 +297,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                     Text(
                                       "Work Diary",
                                       style: TextStyle(
-                                          fontSize: 18,
+                                          fontSize: 16,
                                           color: AppTheme.textColor,
                                           fontWeight: FontWeight.w600),
                                     ),
@@ -389,7 +394,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                       Text(
                                                         "Mon 8/22",
                                                         style: TextStyle(
-                                                            fontSize: 14,
+                                                            fontSize: 13,
                                                             color: AppTheme
                                                                 .textColor),
                                                       ),
@@ -432,7 +437,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                       Text(
                                                         "0:00 hrs",
                                                         style: TextStyle(
-                                                            fontSize: 14,
+                                                            fontSize: 13,
                                                             color: AppTheme
                                                                 .textColor),
                                                       ),
@@ -501,7 +506,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                 Text(
                                                   "1:10 hrs",
                                                   style: TextStyle(
-                                                      fontSize: 16,
+                                                      fontSize: 14,
                                                       color:
                                                           AppTheme.darkBlueText,
                                                       fontWeight:
@@ -531,7 +536,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                 Text(
                                                   "6:20 hrs",
                                                   style: TextStyle(
-                                                      fontSize: 16,
+                                                      fontSize: 14,
                                                       color:
                                                           AppTheme.darkBlueText,
                                                       fontWeight:
@@ -561,7 +566,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                                 Text(
                                                   "7:55 hrs",
                                                   style: TextStyle(
-                                                      fontSize: 16,
+                                                      fontSize: 14,
                                                       color:
                                                           AppTheme.darkBlueText,
                                                       fontWeight:
@@ -574,7 +579,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                     Text(
                                       "Hours this week",
                                       style: TextStyle(
-                                          fontSize: 18,
+                                          fontSize: 16,
                                           color: AppTheme.textColor,
                                           fontWeight: FontWeight.w600),
                                     ),
@@ -610,14 +615,14 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                         Text(
                                           "6:50 hrs",
                                           style: TextStyle(
-                                              fontSize: 14,
+                                              fontSize: 13,
                                               fontWeight: FontWeight.w500,
                                               color: AppTheme.textColor),
                                         ),
                                         Text(
                                           "20 hrs limit",
                                           style: TextStyle(
-                                              fontSize: 14,
+                                              fontSize: 13,
                                               fontWeight: FontWeight.w500,
                                               color: AppTheme.textColor),
                                         ),
@@ -626,7 +631,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                     Text(
                                       "you will get paid for these hours on Monday (unifybilling timezon)",
                                       style: TextStyle(
-                                          fontSize: 13,
+                                          fontSize: 12,
                                           color: AppTheme.textColor),
                                     ),
                                   ],

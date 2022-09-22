@@ -3,7 +3,6 @@ class Assets {
   Assets._();
 
   static const String assetsIconAlerts = 'assets/icon/Alerts.svg';
-  static const String fontsPoppins-Regular = 'assets/fonts/Poppins-Regular.ttf';
   static const String iconAlerts = 'assets/icon/alerts.png';
   static const String iconAppleIcon = 'assets/icon/apple_icon.png';
   static const String iconBadge = 'assets/icon/badge.svg';

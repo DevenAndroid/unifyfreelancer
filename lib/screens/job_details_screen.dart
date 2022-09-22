@@ -1,10 +1,17 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:unifyfreelancer/Screens/radio_button_job_detils.dart';
 
 import '../../resources/app_theme.dart';
 import '../../widgets/custom_appbar.dart';
 
+import '../Controller/jobs_detail_controller.dart';
 import '../widgets/appDrawer.dart';
 import '../widgets/common_outline_button.dart';
 
@@ -21,6 +28,58 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
   final _letterController = TextEditingController();
 
   String? time;
+
+  final controller = Get.put(JobsDetailController());
+
+  FilePickerResult? uploadDocument1;
+  String? uploadDocumentFileName1;
+  PlatformFile? uploadDocumentPickedFile1;
+  bool uploadDocumentLoading1 = false;
+  File? uploadDocumentDisplay1;
+  String? sendingDocumentInAPI1;
+
+  void uploadDocumentFunction1() async {
+    try {
+      setState(() {
+        uploadDocumentLoading1 = true;
+      });
+      uploadDocument1 = await FilePicker.platform.pickFiles(
+          type: FileType.custom,
+          allowMultiple: false,
+          allowedExtensions: ['jpg', 'jpeg', 'png', 'pdf', 'docx', 'doc']);
+      if (uploadDocument1 != null) {
+        uploadDocumentFileName1 = uploadDocument1!.files.first.name;
+        uploadDocumentPickedFile1 = uploadDocument1!.files.first;
+        uploadDocumentDisplay1 =
+            File(uploadDocumentPickedFile1!.path.toString());
+
+        List<int> uploadDocument64 = uploadDocumentDisplay1!.readAsBytesSync();
+
+        sendingDocumentInAPI1 = base64Encode(uploadDocument64);
+
+        print("Base 64 image===> $sendingDocumentInAPI1");
+
+        if (kDebugMode) {
+          print("File name $uploadDocumentFileName1");
+        }
+      }
+
+      setState(() {
+        uploadDocumentLoading1 = false;
+      });
+    } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // controller.selected;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +132,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                           Text(
                             "IOS And Android App design And development",
                             style: TextStyle(
-                              fontSize: 20.sp,
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w600,
                               color: AppTheme.darkBlueText,
                             ),
@@ -156,7 +215,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                                   Text(
                                     "Freelancer Type",
                                     style: TextStyle(
-                                        fontSize: 16.sp,
+                                        fontSize: 14.sp,
                                         color: const Color(0xff180D31)),
                                   ),
                                   SizedBox(
@@ -165,7 +224,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                                   Text(
                                     "Individual",
                                     style: TextStyle(
-                                        fontSize: 17.sp,
+                                        fontSize: 15.sp,
                                         fontWeight: FontWeight.w600,
                                         color: const Color(0xff180D31)),
                                   )
@@ -177,7 +236,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                                   Text(
                                     "Project Duration",
                                     style: TextStyle(
-                                        fontSize: 16.sp,
+                                        fontSize: 14.sp,
                                         color: const Color(0xff180D31)),
                                   ),
                                   SizedBox(
@@ -186,7 +245,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                                   Text(
                                     "1-5 Days",
                                     style: TextStyle(
-                                        fontSize: 17.sp,
+                                        fontSize: 15.sp,
                                         fontWeight: FontWeight.w600,
                                         color: const Color(0xff180D31)),
                                   )
@@ -209,7 +268,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "Description",
                       style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xff170048)),
                     ),
@@ -219,7 +278,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "This is a Great  Moment for us to announce a designer job for our company, The candidate who falls in the criteria can apply. We'll call the candidates who are eligible for an interview.",
                       style: TextStyle(
-                          fontSize: 14.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w300,
                           color: const Color(0xff6B6B6B)),
                     ),
@@ -235,7 +294,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "Skills Required",
                       style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xff170048)),
                     ),
@@ -295,7 +354,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "Terms",
                       style: TextStyle(
-                          fontSize: 20.sp,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
                           color: const Color(0xff170048)),
                     ),
@@ -305,7 +364,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "Client's budget: \$5.00 USD",
                       style: TextStyle(
-                          fontSize: 15.sp, color: const Color(0xff180D31)),
+                          fontSize: 13.sp, color: const Color(0xff180D31)),
                     ),
                     SizedBox(
                       height: deviceHeight * .01,
@@ -313,7 +372,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "What is the full amount you like to bid for this job?",
                       style: TextStyle(
-                          fontSize: 15.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
                           color: const Color(0xff180D31)),
                     ),
@@ -323,7 +382,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "Bid",
                       style: TextStyle(
-                          fontSize: 15.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
                           color: const Color(0xff180D31)),
                     ),
@@ -589,6 +648,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                             return RadioWidget();
                           },
                         );
+
                       },
                       child: Container(
                         padding: EdgeInsets.all(10),
@@ -598,13 +658,16 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              'Select a duration',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  color: Color(0xff431444)),
-                            ),
+                            Obx(() {
+                              return
+                                Text(
+                                  controller.coverLaterText.isEmpty?'Select a duration':controller.coverLaterText.toString(),
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w300,
+                                    color: Color(0xff431444)),
+                              );
+                            }),
                             Icon(
                               Icons.keyboard_arrow_down_rounded,
                               color: AppTheme.blackColor,
@@ -617,41 +680,83 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                       height: deviceHeight * .025,
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        uploadDocumentFunction1();
+                      },
                       child: Container(
                         padding: const EdgeInsets.only(left: 10.0),
                         decoration: BoxDecoration(
                             border: Border.all(color: AppTheme.primaryColor)),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Image.asset("assets/icon/script.png"),
-                                SizedBox(
-                                  width: 15.w,
-                                ),
-                                Text(
-                                  "Attach Files",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w300),
-                                )
-                              ],
-                            ),
-                            Container(
-                              padding: EdgeInsets.all(15),
-                              color: AppTheme.pinkText,
-                              child: Text(
-                                "Choose File",
-                                style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppTheme.whiteColor),
+                        child: uploadDocumentDisplay1 == null
+                            ? Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Row(
+                                      children: [
+                                        Image.asset("assets/icon/script.png"),
+                                        SizedBox(
+                                          width: 15.w,
+                                        ),
+                                        Text(
+                                          "Attach Files",
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w300),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(15),
+                                    color: AppTheme.pinkText,
+                                    child: Text(
+                                      "Choose File",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppTheme.whiteColor),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            : Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(
+                                    child: Row(
+                                      children: [
+                                        Image.asset("assets/icon/script.png"),
+                                        SizedBox(
+                                          width: 15.w,
+                                        ),
+                                        Expanded(
+                                          child: Text(
+                                            uploadDocumentFileName1!.toString(),
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.w300),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(15),
+                                    color: AppTheme.pinkText,
+                                    child: Text(
+                                      "Choose File",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppTheme.whiteColor),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ],
-                        ),
                       ),
                     ),
                     SizedBox(
@@ -673,5 +778,3 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
     );
   }
 }
-
-

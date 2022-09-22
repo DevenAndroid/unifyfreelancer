@@ -57,7 +57,7 @@ class MyRouter {
   static var helpAndSupportScreen = "/helpAndSupportScreen";
 
   static var route = [
-    GetPage(name: '/', page: () => const BottomNavbar()),
+    GetPage(name: '/', page: () => const LoginScreen()),
     GetPage(name: MyRouter.onBoardingScreen, page: () => const OnBoardingScreen()),
     GetPage(name: MyRouter.signUpScreen, page: () => const SignUpScreen()),
     GetPage(name: MyRouter.loginScreen, page: () => const LoginScreen()),

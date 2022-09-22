@@ -181,6 +181,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                                         AppTheme.primaryColor.withOpacity(.15),
                                     width: 1)),
                             child: CountryPickerDropdown(
+                              hint: Text("Select country"
+                              ),
                               isExpanded: true,
                               initialValue: 'in',
                               itemBuilder: _buildDropdownItem,

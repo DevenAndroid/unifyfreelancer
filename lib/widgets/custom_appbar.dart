@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:unifyfreelancer/resources/app_theme.dart';
+import 'package:unifyfreelancer/routers/my_router.dart';
 
 class CustomAppbar extends StatelessWidget {
   final bool? isProfileImage;
@@ -88,14 +89,17 @@ class CustomAppbar extends StatelessWidget {
                     ),
                   ]*/
                 ),
-                child: Container(
-                  decoration: const BoxDecoration(
+                child: InkWell(
+                  onTap: ()=>Get.toNamed(MyRouter.saveJobsScreen),
+                  child: Container(
+                    decoration: const BoxDecoration(
 
-                    shape: BoxShape.circle,
+                      shape: BoxShape.circle,
+                    ),
+                    height: 20.h,
+                    width: 20.w,
+                    child: SvgPicture.asset("assets/icon/heart.svg")
                   ),
-                  height: 20.h,
-                  width: 20.w,
-                  child: SvgPicture.asset("assets/icon/heart.svg")
                 ),
               )
             : const SizedBox()

@@ -12,7 +12,9 @@ class PasswordAndSecurityScreen extends StatefulWidget {
   @override
   State<PasswordAndSecurityScreen> createState() =>
       _PasswordAndSecurityScreenState();
+
 }
+
 
 class _PasswordAndSecurityScreenState extends State<PasswordAndSecurityScreen> {
   bool isSwitched = false;
