@@ -175,7 +175,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                 border: Border(
                                     top: BorderSide(
                                         color: AppTheme.pinkText, width: 0.5))),
-                            height: deviceHeight - deviceHeight * .400,
+                            height: deviceHeight - deviceHeight * .260,
                             child: TabBarView(
                               children: [
                                 Column(
@@ -368,8 +368,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                     ),
                                     Expanded(
                                       child: ListView.builder(
-                                          physics:
-                                              NeverScrollableScrollPhysics(),
+                                          physics: NeverScrollableScrollPhysics(),
                                           shrinkWrap: true,
                                           itemCount: 10,
                                           padding: EdgeInsets.only(bottom: 20),

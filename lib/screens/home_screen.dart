@@ -17,14 +17,23 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var index = 0;
-
+  /*var index = 0;*/
+/*
   List<StackButtons> stackButtonsList = [
     StackButtons(titleText: 'Support Agent', positionPoint: 0),
     StackButtons(titleText: 'Designer', positionPoint: 50),
     StackButtons(titleText: 'IOS Developer', positionPoint: 100),
     StackButtons(titleText: 'Backend Developer', positionPoint: 150),
+  ];*/
+
+
+  List<String> stackButtonsList = [
+    'Support Agent',
+    'Designer',
+    'IOS Developer',
+    'Backend Developer'
   ];
+
 
   @override
   void initState() {
@@ -270,28 +279,33 @@ class _HomeScreenState extends State<HomeScreen> {
                                           SizedBox(
                                             width: deviceWidth,
                                             height: 50.h,
-                                            child: Stack(
-                                              children: List.generate(
-                                                stackButtonsList.length,
-                                                (index11) => Positioned(
-                                                    left: stackButtonsList[
-                                                            index11]
-                                                        .positionPoint,
-                                                    child: CustomOutlineButton(
+                                            child:  ListView.builder(
+                                                physics: BouncingScrollPhysics(),
+                                                scrollDirection: Axis.horizontal,
+                                                itemCount: stackButtonsList.length,
+                                                itemBuilder: (context,index){
+                                                  return Container(
+                                                    margin: EdgeInsets.only(right: 4,bottom: 8
+                                                    ),
+                                                    child: CustomOutlineButton(title: stackButtonsList[index],
                                                       backgroundColor: AppTheme.whiteColor,
                                                       textColor: AppTheme.primaryColor,
-                                                      title: stackButtonsList[
-                                                              index11]
-                                                          .titleText
-                                                          .toString(),
-
+                                                      expandedValue: false,
+                                                      onPressed: (){},),
+                                                  );
+                                                }
+                                            ),
+                                         /*
+                                            Stack(
+                                              children:
+                                              List.generate(stackButtonsList.length, (index11)
+                                              => Positioned(left: stackButtonsList[index11].positionPoint,
+                                                    child: CustomOutlineButton(backgroundColor: AppTheme.whiteColor,
+                                                      textColor: AppTheme.primaryColor, title: stackButtonsList[index11].titleText.toString(),
                                                       onPressed: () {
                                                         String titleName = "";
                                                         double positionName = 0;
-                                                        titleName =
-                                                            stackButtonsList[
-                                                                    index11]
-                                                                .titleText!;
+                                                        titleName = stackButtonsList[index11].titleText!;
                                                         positionName =
                                                             stackButtonsList[
                                                                     index11]
@@ -310,7 +324,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                               ),
                                               // children: [
                                               // ],
-                                            ),
+                                            ),*/
                                           ),
                                           SizedBox(
                                             height: deviceHeight * .01,
@@ -328,6 +342,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+/*
 
 class StackButtons {
   final String? titleText;
@@ -335,3 +350,4 @@ class StackButtons {
 
   StackButtons({this.titleText, this.positionPoint});
 }
+*/

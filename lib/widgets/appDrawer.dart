@@ -38,7 +38,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(100))),
                         child: Container(
-                          margin: const EdgeInsets.all(3),
+                          margin: const EdgeInsets.all(2),
                           decoration: const BoxDecoration(
                               color: AppTheme.blackColor,
                               shape: BoxShape.circle,
@@ -46,8 +46,8 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                                   image: NetworkImage(
                                       "https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"),
                                   fit: BoxFit.cover)),
-                          height: 40.h,
-                          width: 40.w,
+                          height: 35.h,
+                          width: 35.w,
                         ),
                       ),
                       SizedBox(
@@ -150,11 +150,11 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
           ),
           ListTile(
             leading: Container(
-                padding: EdgeInsets.all(12),
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: AppTheme.primaryColor.withOpacity(.15)),
-                child: SvgPicture.asset("assets/icon/badge.svg")),
+                child: SvgPicture.asset("assets/icon/badge.svg",fit: BoxFit.cover,height: 20,width: 20,)),
             title: Text(
               'Unify Qualifications',
               style: TextStyle(

@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:unifyfreelancer/resources/app_theme.dart';
 
 showError(String content) {
+  Get.closeAllSnackbars();
   Get.snackbar('Status', content,
       colorText: AppTheme.darkBlueText,
       backgroundGradient: LinearGradient(colors: [

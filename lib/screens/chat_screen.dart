@@ -26,7 +26,7 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
         drawer: AppDrawerScreen(),
         body: SingleChildScrollView(
-          physics: NeverScrollableScrollPhysics(),
+
           child: Column(
             children: [
               Container(

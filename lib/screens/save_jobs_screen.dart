@@ -16,12 +16,21 @@ class SaveJobsScreen extends StatefulWidget {
 }
 
 class _SaveJobsScreenState extends State<SaveJobsScreen> {
-  List<StackButtons> stackButtonsList = [
+
+
+/*  List<StackButtons> stackButtonsList = [
     StackButtons(titleText: 'Support Agent', positionPoint: 0),
     StackButtons(titleText: 'Designer', positionPoint: 50),
     StackButtons(titleText: 'IOS Developer', positionPoint: 100),
     StackButtons(titleText: 'Backend Developer', positionPoint: 150),
-  ];
+  ];*/
+
+List<String> stackButtonsList = [
+  'Support Agent',
+  'Designer',
+  'IOS Developer',
+  'Backend Developer'
+];
 
   @override
   void initState() {
@@ -160,16 +169,16 @@ class _SaveJobsScreenState extends State<SaveJobsScreen> {
                         height: deviceHeight * .01,
                       ),
                       SizedBox(
-                        height: 45,
+                        height: 50,
                         child: ListView.builder(
                           physics: BouncingScrollPhysics(),
                           scrollDirection: Axis.horizontal,
-                          itemCount: 4,
+                          itemCount: stackButtonsList.length,
                             itemBuilder: (context,index){
                           return Container(
-                            margin: EdgeInsets.only(right: 3,bottom: 2
+                            margin: EdgeInsets.only(right: 4,bottom: 2
                             ),
-                            child: CustomOutlineButton(title: "wed developer",
+                            child: CustomOutlineButton(title: stackButtonsList[index],
                             backgroundColor: AppTheme.whiteColor,
                             textColor: AppTheme.primaryColor,
                             expandedValue: false,

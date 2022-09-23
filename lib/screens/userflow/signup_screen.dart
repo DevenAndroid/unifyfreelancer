@@ -1,18 +1,18 @@
-
-import 'package:country_pickers/country.dart';
-import 'package:country_pickers/country_pickers.dart';
+import 'package:country_calling_code_picker/picker.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 import 'package:get/get.dart';
-import 'package:unifyfreelancer/resources/app_assets.dart';
-import 'package:unifyfreelancer/resources/app_theme.dart';
-import 'package:unifyfreelancer/resources/strings.dart';
-import 'package:unifyfreelancer/routers/my_router.dart';
-import 'package:unifyfreelancer/widgets/box_textfield.dart';
-import 'package:unifyfreelancer/widgets/common_button.dart';
-import 'package:unifyfreelancer/widgets/custom_dialogue.dart';
+
+import '../../resources/app_assets.dart';
+import '../../resources/app_theme.dart';
+import '../../resources/strings.dart';
+import '../../routers/my_router.dart';
+import '../../widgets/box_textfield.dart';
+import '../../widgets/common_button.dart';
+import '../../widgets/custom_dialogue.dart';
+
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -30,21 +30,37 @@ class _SignUpScreenState extends State<SignUpScreen> {
   bool acceptTermsOrPrivacy = false;
   RxBool eyeHide = false.obs;
 
-  String dropDownValue = 'All Transactions';
+  Country? _selectedCountry;
+  var countryText = false;
 
-  var items = [
-    'India',
-    'USA',
-    'Uk',
-    'Shri Lanka',
-    'Pakistan',
-  ];
+  @override
+  void initState() {
+    initCountry();
+    super.initState();
+  }
 
+  void initCountry() async {
+    final country = await getDefaultCountry(context);
+    setState(() {
+      _selectedCountry = country;
+    });
+  }
+
+  void _onPressedShowBottomSheet() async {
+    final country = await showCountryPickerSheet(
+      context,
+    );
+    if (country != null) {
+      setState(() {
+        _selectedCountry = country;
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
-
+    final country = _selectedCountry;
     return Scaffold(
       body: SingleChildScrollView(
         child: Form(
@@ -171,29 +187,93 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           SizedBox(
                             height: 12.h,
                           ),
-                          Container(
-                            width: deviceWidth,
-                            decoration: BoxDecoration(
-                                color: AppTheme.primaryColor.withOpacity(.05),
-                                borderRadius: BorderRadius.circular(8),
-                                border: Border.all(
-                                    color:
-                                        AppTheme.primaryColor.withOpacity(.15),
-                                    width: 1)),
-                            child: CountryPickerDropdown(
-                              hint: Text("Select country"
+                          InkWell(
+                            onTap: (){
+                              _onPressedShowBottomSheet();
+                              setState(() {
+                                countryText = true;
+                              });
+                            },
+                            child: countryText == false ?
+                            TextFormField(
+                              enabled: false,
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor: AppTheme.primaryColor.withOpacity(.05),
+                                hintText: "Select country",
+                                errorText: "Select country",
+                                prefixIcon: Icon(Icons.flag),
+                                hintStyle: const TextStyle(
+                                    color: Color(0xff596681), fontSize: 15),
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 14, horizontal: 20),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15),
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15),
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                border: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: AppTheme.primaryColor
+                                            .withOpacity(.15),
+                                        width: 1.0),
+                                    borderRadius: BorderRadius.circular(8.0)),
                               ),
-                              isExpanded: true,
-                              initialValue: 'in',
-                              itemBuilder: _buildDropdownItem,
-                              onValuePicked: (Country country) {
-                                print("${country.name}");
-                              },
-                            ),
-                          ),
-                          SizedBox(
-                            height: 12.h,
-                          ),
+                            )
+                            : TextFormField(
+                              enabled: false,
+                              decoration: InputDecoration(
+                                filled: true,
+                                fillColor:
+                                AppTheme.primaryColor.withOpacity(.05),
+                                 hintText: ' ${country!.name}',
+
+                                errorText: "Select country",
+                                prefixIcon:
+                                Padding(
+                                  padding: EdgeInsets.only(left: 5,right: 5),
+                                  child: Image.asset(
+                                    country.flag,
+                                    package: countryCodePackageName,
+                                    width: 5,
+                                    height: 5,
+                                  ),
+                                ),
+                                hintStyle: const TextStyle(
+                                    color: Color(0xff596681), fontSize: 15),
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 14, horizontal: 20),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15),
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: AppTheme.primaryColor
+                                          .withOpacity(.15),
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                border: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                        color: AppTheme.primaryColor
+                                            .withOpacity(.15),
+                                        width: 1.0),
+                                    borderRadius: BorderRadius.circular(8.0)),
+                              ),
+                            )),
 
                           /*Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -304,8 +384,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           CommonButton(AppStrings.buttonCreateAccount, () {
                             if (_formKey.currentState!.validate()) {
                               if (acceptTermsOrPrivacy == false) {
-                                showError('plz accept conditions.');
-                              } else {
+                                showError('Please accept conditions.');
+                              }
+                              else if(countryText == false ){
+                                showError('Please select a country',);
+                              }
+                              else {
                                 showError('Call your Api Here.');
                                 Get.toNamed(MyRouter.bottomNavbar);
                               }
@@ -356,24 +440,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  Widget _buildDropdownItem(Country country) => Container(
-        child: Row(
-          children: <Widget>[
-            SizedBox(
-              width: 12.0,
-            ),
-            CountryPickerUtils.getDefaultFlagImage(country),
-            SizedBox(
-              width: 8.0,
-            ),
-            // Text("+${country.phoneCode}(${country.isoCode})"),
-            Expanded(
-              child: Text(
-                "${country.name}",
-                style: TextStyle(overflow: TextOverflow.ellipsis),
-              ),
-            ),
-          ],
-        ),
-      );
+// Widget _buildDropdownItem(Country country) => Container(
+//       child: Row(
+//         children: <Widget>[
+//           SizedBox(
+//             width: 12.0,
+//           ),
+//           CountryPickerUtils.getDefaultFlagImage(country),
+//           SizedBox(
+//             width: 8.0,
+//           ),
+//           // Text("+${country.phoneCode}(${country.isoCode})"),
+//           Expanded(
+//             child: Text(
+//               "${country.name}",
+//               style: TextStyle(overflow: TextOverflow.ellipsis),
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+}
+
+class PickerPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return CountryPickerWidget(
+      onSelected: (country) => Navigator.pop(context, country),
+    );
+  }
 }

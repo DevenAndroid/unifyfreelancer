@@ -38,6 +38,7 @@ dependencies:
   flutter_svg: ^1.1.5
   file_picker: ^5.2.0
   country_pickers:
+  country_calling_code_picker: ^2.0.1
 
 
 
