@@ -116,7 +116,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               obSecure: false.obs,
                               prefix: Icon(
                                 Icons.person_outline,
-                                color: AppTheme.darkBlueText,
+
                               ),
                               controller: firstNameController,
                               hintText: AppStrings.firstName.obs,
@@ -131,7 +131,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               obSecure: false.obs,
                               prefix: Icon(
                                 Icons.person_outline,
-                                color: AppTheme.darkBlueText,
+
                               ),
                               controller: lastNameController,
                               hintText: AppStrings.lastName.obs,
@@ -146,7 +146,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               obSecure: false.obs,
                               prefix: Icon(
                                 Icons.mail_outline,
-                                color: AppTheme.darkBlueText,
+
                               ),
                               controller: emailController,
                               hintText: AppStrings.emailID.obs,
@@ -165,7 +165,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               obSecure: eyeHide,
                               prefix: Icon(
                                 Icons.lock_outline,
-                                color: AppTheme.darkBlueText,
                               ),
                               suffixIcon: eyeHide == false
                                   ? Icons.visibility_off_outlined

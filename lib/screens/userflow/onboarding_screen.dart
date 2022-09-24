@@ -26,9 +26,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       if (pageController.page!.toDouble() > 1.0) {
         currentIndex1 = true;
         var value2 = pageController.page!.toDouble() - 1;
-        value1 = 60 * value2 * 3;
+        value1 = 50 * value2 * 3;
         value132 = value2 * 3;
-        containerWidth = 60 + value1;
+        containerWidth = 50 + value1;
         fontSize = 6 * value132;
         // print(containerWidth);
         // print(value1);
@@ -39,7 +39,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     });
   }
 
-  double containerWidth = 60;
+  double containerWidth = 50;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       padding: const EdgeInsets.only(left: 15.0),
                       child: Text(
                         "Skip",
-                        style: TextStyle(fontSize: 16),
+                        style: TextStyle(fontSize: 16,
+                        color: Color(0xff707070).withOpacity(.800)),
                       ),
                     ),
                   ),
@@ -158,7 +159,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                             curve: Curves.ease);
                       },
                       child: Container(
-                        height: 60,
+                        height: 50,
                         width: containerWidth,
                         decoration: BoxDecoration(
                           // shape: BoxShape.circle,

@@ -61,7 +61,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
                             "Jonny Smith",
                             style: TextStyle(
                                 fontSize: 16,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                                 color: AppTheme.whiteColor),
                           ),
                           SizedBox(
@@ -116,7 +116,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
               'Profile',
               style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: AppTheme.textColor),
             ),
             onTap: ()=> Get.toNamed(MyRouter.profileScreen),
@@ -140,7 +140,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
               'Reports',
               style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: AppTheme.textColor),
             ),
             onTap: ()=> Get.toNamed(MyRouter.reportsScreen),
@@ -159,7 +159,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
               'Unify Qualifications',
               style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: AppTheme.textColor),
             ),
             onTap: ()=> Get.toNamed(MyRouter.unifyQualificationsScreen),
@@ -182,7 +182,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
               'Settings',
               style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: AppTheme.textColor),
             ),
             onTap: ()=> Get.toNamed(MyRouter.settingsScreen),
@@ -205,7 +205,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
               'Help & Support',
               style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: AppTheme.textColor),
             ),
             onTap: ()=> Get.toNamed(MyRouter.helpAndSupportScreen),
@@ -228,7 +228,7 @@ class _AppDrawerScreenState extends State<AppDrawerScreen> {
               'Logout',
               style: TextStyle(
                   fontSize: 15,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: AppTheme.textColor),
             ),
             onTap: ()=> Get.toNamed(MyRouter.loginScreen),

@@ -79,7 +79,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         BoxTextField(
                             prefix: Icon(
                               Icons.mail_outline,
-                              color: AppTheme.darkBlueText,
                             ),
                             controller: userNameOrEmailController,
                             obSecure: false.obs,
@@ -96,7 +95,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         BoxTextField(
                           prefix: Icon(
                             Icons.lock_outline,
-                            color: AppTheme.darkBlueText,
                           ),
                           controller: passwordController,
                           obSecure: true.obs,

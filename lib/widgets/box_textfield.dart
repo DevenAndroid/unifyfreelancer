@@ -113,7 +113,7 @@ class _BoxTextFieldState extends State<BoxTextField> {
             // labelText: label,
             hintStyle: const TextStyle(color: Color(0xff596681), fontSize: 15),
             contentPadding:
-                const EdgeInsets.symmetric(vertical: 14, horizontal: 20),
+                const EdgeInsets.symmetric(vertical: 14),
             focusedBorder: OutlineInputBorder(
               borderSide:
                    BorderSide(color: AppTheme.primaryColor.withOpacity(.15), width: 1.0),

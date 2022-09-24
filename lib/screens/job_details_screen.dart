@@ -364,7 +364,9 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "Client's budget: \$5.00 USD",
                       style: TextStyle(
-                          fontSize: 13.sp, color: const Color(0xff180D31)),
+                          fontSize: 13.sp, color: const Color(0xff180D31),
+                        fontWeight: FontWeight.w300
+                      ),
                     ),
                     SizedBox(
                       height: deviceHeight * .01,
@@ -373,7 +375,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                       "What is the full amount you like to bid for this job?",
                       style: TextStyle(
                           fontSize: 13.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w700,
                           color: const Color(0xff180D31)),
                     ),
                     SizedBox(
@@ -383,7 +385,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                       "Bid",
                       style: TextStyle(
                           fontSize: 13.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w700,
                           color: const Color(0xff180D31)),
                     ),
                     SizedBox(
@@ -392,7 +394,9 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                     Text(
                       "Total amount the client will see on your proposal",
                       style: TextStyle(
-                          fontSize: 13.sp, color: const Color(0xff170048)),
+                          fontSize: 13.sp, color: const Color(0xff170048),
+                          fontWeight: FontWeight.w300),
+
                     ),
                     SizedBox(
                       height: deviceHeight * .01,
@@ -519,6 +523,7 @@ class _JobDetailsScreenState extends State<JobDetailsScreen> {
                       "This estimated amount you receiver after service",
                       style: TextStyle(
                         fontSize: 13.sp,
+                        fontWeight: FontWeight.w300,
                         color: AppTheme.textColor2,
                       ),
                     ),

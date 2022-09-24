@@ -20,7 +20,7 @@ class _ChatScreenState extends State<ChatScreen> {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             isLikeButton: true,
-            isProfileImage: true,
+            isProfileImage: false,
             titleText: "Messages",
           ),
         ),
@@ -65,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                     ),
                                     Padding(
                                       padding:
-                                          const EdgeInsets.only(bottom: 10.0),
+                                          const EdgeInsets.only(bottom: 3.0),
                                       child: Icon(
                                         Icons.star_rate_rounded,
                                         color: AppTheme.pinkText,
@@ -131,7 +131,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                         padding: EdgeInsets.only(left: 25),
                                         child: Text(
                                             "Our motivation is to enable computerized connections through versatility. By planning and creating ",style: TextStyle(fontSize: 12,color: Color(0xff151021)),
-                                            textAlign: TextAlign.right),
+                                            textAlign: TextAlign.left),
                                       )),
                                 ),
                                 Positioned(
@@ -172,7 +172,8 @@ class _ChatScreenState extends State<ChatScreen> {
                                     child: Padding(
                                       padding: EdgeInsets.only(right: 25),
                                       child: Text(
-                                        "Our motivation is to enable computerized connections through versatility. By planning and creating ",style: TextStyle(fontSize: 12,color: Color(0xff151021)),
+                                        "Our motivation is to enable computerized connections through versatility. By planning and creating ",
+                                        style: TextStyle(fontSize: 12,color: Color(0xff151021),),textAlign: TextAlign.right
                                       ),
                                     )),
                               ),
@@ -218,23 +219,30 @@ class _ChatScreenState extends State<ChatScreen> {
                                 border: InputBorder.none),
                           ),
                         ),
-                        Icon(Icons.phone),
+
                         SizedBox(
-                          width: 5.w,
+                          width: 10.w,
                         ),
                         Text(
                           "@",
                           style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.w500),
+                              fontSize: 20, fontWeight: FontWeight.w500),
                         ),
                         SizedBox(
-                          width: 5.w,
+                          width: 10.w,
                         ),
-                        Icon(Icons.attach_file),
+                        Icon(Icons.attach_file,size: 20,),
                         SizedBox(
-                          width: 5.w,
+                          width: 10.w,
                         ),
-                        Icon(Icons.send),
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.rectangle,
+                            border: Border(left: BorderSide(color: Color(0xff707070).withOpacity(.4)))
+                          ),
+                            child: Icon(Icons.send,size: 20,
+                            )),
                       ],
                     ),
                   ))

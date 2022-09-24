@@ -9,6 +9,8 @@ import 'package:unifyfreelancer/Screens/proposals_screen.dart';
 
 import '../Controller/bottom_nav_bar_controller.dart';
 import '../resources/app_theme.dart';
+import '../widgets/appDrawer.dart';
+import '../widgets/custom_appbar.dart';
 
 class BottomNavbar extends StatefulWidget {
   const BottomNavbar({Key? key}) : super(key: key);
@@ -27,10 +29,29 @@ class _BottomNavbarState extends State<BottomNavbar> {
     const AlertsScreen(),
   ];
 
+  var screenTitle = [
+    "Jobs",
+    "Proposals",
+    "Contracts",
+    "Messages",
+    "Alerts",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Obx(() {
       return Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
+          child: Obx(() {
+            return CustomAppbar(
+              isLikeButton: true,
+              isProfileImage: true,
+              titleText: "${screenTitle[controller.pageIndex.value]}",
+            );
+          }),
+        ),
+        drawer: AppDrawerScreen(),
         body: pages.elementAt(controller.pageIndex.value),
         extendBody: true,
         // extendBodyBehindAppBar: true,
@@ -76,9 +97,9 @@ class _BottomNavbarState extends State<BottomNavbar> {
                       ),
                       controller.pageIndex.value == 0
                           ? SvgPicture.asset(
-                              'assets/icon/Search.svg',
-                              color: AppTheme.primaryColor,
-                            )
+                        'assets/icon/Search.svg',
+                        color: AppTheme.primaryColor,
+                      )
                           : SvgPicture.asset('assets/icon/Search.svg'),
                       const SizedBox(
                         height: 10,
@@ -109,9 +130,9 @@ class _BottomNavbarState extends State<BottomNavbar> {
                       ),
                       controller.pageIndex.value == 1
                           ? SvgPicture.asset(
-                              'assets/icon/Proposals.svg',
-                              color: AppTheme.primaryColor,
-                            )
+                        'assets/icon/Proposals.svg',
+                        color: AppTheme.primaryColor,
+                      )
                           : SvgPicture.asset('assets/icon/Proposals.svg'),
                       const SizedBox(
                         height: 10,
@@ -142,9 +163,9 @@ class _BottomNavbarState extends State<BottomNavbar> {
                       ),
                       controller.pageIndex.value == 2
                           ? SvgPicture.asset(
-                              'assets/icon/Contracts.svg',
-                              color: AppTheme.primaryColor,
-                            )
+                        'assets/icon/Contracts.svg',
+                        color: AppTheme.primaryColor,
+                      )
                           : SvgPicture.asset('assets/icon/Contracts.svg'),
                       const SizedBox(
                         height: 10,
@@ -175,9 +196,9 @@ class _BottomNavbarState extends State<BottomNavbar> {
                       ),
                       controller.pageIndex.value == 3
                           ? SvgPicture.asset(
-                              'assets/icon/message.svg',
-                              color: AppTheme.primaryColor,
-                            )
+                        'assets/icon/message.svg',
+                        color: AppTheme.primaryColor,
+                      )
                           : SvgPicture.asset('assets/icon/message.svg'),
                       const SizedBox(
                         height: 10,
@@ -208,9 +229,9 @@ class _BottomNavbarState extends State<BottomNavbar> {
                       ),
                       controller.pageIndex.value == 4
                           ? SvgPicture.asset(
-                              'assets/icon/Alerts.svg',
-                              color: AppTheme.primaryColor,
-                            )
+                        'assets/icon/Alerts.svg',
+                        color: AppTheme.primaryColor,
+                      )
                           : SvgPicture.asset('assets/icon/Alerts.svg'),
                       const SizedBox(
                         height: 10,

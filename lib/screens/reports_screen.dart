@@ -74,7 +74,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                               child: Text(
                                 "Overview",
                                 style: TextStyle(
-                                  fontSize: 15.sp,
+                                  fontSize: 17.sp,
                                 ),
                               ),
                             ),
@@ -82,7 +82,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                               child: Text(
                                 "Timesheet",
                                 style: TextStyle(
-                                  fontSize: 15.sp,
+                                  fontSize: 17.sp,
                                 ),
                               ),
                             ),
@@ -130,7 +130,8 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                 Text(
                                                   "\$1000.00",
                                                   style: TextStyle(
-                                                      fontSize: 13,
+                                                      fontSize: 14,
+                                                      fontWeight: FontWeight.w600,
                                                       color: AppTheme
                                                           .primaryColor),
                                                 )
@@ -142,6 +143,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                   Icons
                                                       .arrow_forward_ios_outlined,
                                                   color: AppTheme.blackColor,
+                                                  size: 20,
                                                 )),
                                           ],
                                         ),
@@ -161,7 +163,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                           Text(
                                             "Transaction History",
                                             style: TextStyle(
-                                                fontSize: 16,
+                                                fontSize: 18,
                                                 color: AppTheme.textColor,
                                                 fontWeight: FontWeight.w600),
                                           ),
@@ -531,7 +533,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               child: Text(
                                                 "Posted by",
                                                 style: TextStyle(
-                                                    fontSize: 14,
+                                                    fontSize: 16,
                                                     fontWeight: FontWeight.w600,
                                                     color: AppTheme.textColor),
                                               ),
@@ -613,9 +615,10 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                             Text(
                                               "No transactions meet your selected criteria",
                                               style: TextStyle(
-                                                  fontSize: 14,
+                                                  fontSize: 16,
                                                   fontWeight: FontWeight.w600,
                                                   color: Color(0xff00065A)),
+                                              textAlign: TextAlign.center,
                                             ),
                                             SizedBox(
                                               height: 10.h,

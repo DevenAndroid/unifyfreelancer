@@ -4,7 +4,6 @@ import 'dart:io';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_theme.dart';
@@ -21,6 +20,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   List<File> _files01 =[];
   var loading = null;
+  int ratingValue = 0;
+  @override
+
 
   void _pickMultipleFiles() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(allowMultiple: true);
@@ -235,14 +237,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           Text(
                             "Hannah Finn",
                             style: TextStyle(
-                                fontSize: 18.sp,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xff180095)),
                           ),
                           SizedBox(
                             width: 10.w,
                           ),
-                          RatingBar.builder(
+                          /*RatingBar.builder(
                             itemSize: 20,
                             initialRating: 3,
                             minRating: 1,
@@ -257,11 +259,19 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             onRatingUpdate: (rating) {
                               print(rating);
                             },
-                          )
-
+                          ),*/
+                          Wrap(
+                            children:
+                            List.generate(3, (index) =>
+                            3 > index ?
+                            Icon(Icons.star,color: AppTheme.pinkText,):
+                            Icon(Icons.star_border_outlined,color: Colors.grey,)
+                            ),
+                          ),
 
                         ],
                       ),
+
                       Text(
                         "Website designer and developer",
                         style: TextStyle(
@@ -598,7 +608,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     Row(
                       children: [
-                        RatingBar.builder(
+                       /* RatingBar.builder(
                           itemSize: 20,
                           initialRating: 3,
                           minRating: 1,
@@ -613,6 +623,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           onRatingUpdate: (rating) {
                             print(rating);
                           },
+                        ),*/
+
+                        Wrap(
+                          children:
+                          List.generate(5, (index) =>
+                          5 > index ?
+                          Icon(Icons.star,color: AppTheme.primaryColor,):
+                          Icon(Icons.star_border_outlined,color: Colors.grey,)
+                          ),
                         ),
                         SizedBox(
                           width: 10,

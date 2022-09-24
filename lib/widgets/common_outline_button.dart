@@ -41,7 +41,7 @@ class CustomOutlineButton extends StatelessWidget {
               title,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 13.sp,
+                fontSize: 14.sp,
                 color: textColor,
               ),
             ),

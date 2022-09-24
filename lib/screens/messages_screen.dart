@@ -17,7 +17,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const PreferredSize(
+       /* appBar: const PreferredSize(
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: CustomAppbar(
             isLikeButton: true,
@@ -25,7 +25,7 @@ class _MessagesScreenState extends State<MessagesScreen> {
             titleText: "Messages",
           ),
         ),
-        drawer: AppDrawerScreen(),
+        drawer: AppDrawerScreen(),*/
         body: ListView.builder(
             padding: EdgeInsets.only(top: 10,bottom: 50),
             shrinkWrap: true,

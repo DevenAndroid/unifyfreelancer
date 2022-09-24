@@ -82,20 +82,17 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                           Text(
                             "Jolly Smith",
                             style: TextStyle(
-                                fontSize: 16.sp,
+                                fontSize: 18.sp,
                                 fontWeight: FontWeight.w600,
                                 color: AppTheme.textColor),
                           ),
+
                           Text(
-                            "United States - Wed 8:10",
+                            "United States - Wed 8:10 AM",
                             style: TextStyle(
                                 fontSize: 13.sp, color: AppTheme.textColor),
                           ),
-                          Text(
-                            "AM",
-                            style: TextStyle(
-                                fontSize: 13.sp, color: AppTheme.textColor),
-                          ),
+
                         ],
                       )
                     ],
@@ -375,7 +372,7 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                           itemBuilder: (context, index) {
                                             return Container(
                                               padding: EdgeInsets.symmetric(
-                                                  vertical: 10),
+                                                  vertical: 12),
                                               decoration: BoxDecoration(
                                                   border: Border(
                                                       bottom: BorderSide(
@@ -615,17 +612,20 @@ class _ContractsDetailsScreenState extends State<ContractsDetailsScreen> {
                                           "6:50 hrs",
                                           style: TextStyle(
                                               fontSize: 13,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.w600,
                                               color: AppTheme.textColor),
                                         ),
                                         Text(
                                           "20 hrs limit",
                                           style: TextStyle(
                                               fontSize: 13,
-                                              fontWeight: FontWeight.w500,
+                                              fontWeight: FontWeight.w600,
                                               color: AppTheme.textColor),
                                         ),
                                       ],
+                                    ),
+                                    SizedBox(
+                                      height: 10,
                                     ),
                                     Text(
                                       "you will get paid for these hours on Monday (unifybilling timezon)",

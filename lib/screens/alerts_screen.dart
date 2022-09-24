@@ -18,7 +18,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
   Widget build(BuildContext context) {
     var deviceHeight = MediaQuery.of(context).size.height;
     return Scaffold(
-      appBar: const PreferredSize(
+      /*appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppbar(
           isLikeButton: true,
@@ -26,7 +26,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
           titleText: "Alerts",
         ),
       ),
-      drawer: AppDrawerScreen(),
+      drawer: AppDrawerScreen(),*/
       body: ListView.builder(
         itemCount: 3,
         itemBuilder: (context, index) {
@@ -116,6 +116,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
                             child: Icon(
                               Icons.clear,
                               color: Colors.black,
+                              size: 20,
                             ),
                           )
                         ],

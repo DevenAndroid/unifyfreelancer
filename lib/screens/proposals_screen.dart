@@ -18,7 +18,7 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: const PreferredSize(
+     /* appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppbar(
           isLikeButton: true,
@@ -26,7 +26,7 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
           titleText: "Proposals",
         ),
       ),
-      drawer: AppDrawerScreen(),
+      drawer: AppDrawerScreen(),*/
       body: Column(
         children: [
           SizedBox(height: 10.h),
@@ -137,7 +137,7 @@ class _ProposalsScreenState extends State<ProposalsScreen> {
                                       height: deviceHeight * .01,
                                     ),
                                     Text(
-                                      "Received Aug 10,02022",
+                                      "Received Aug 10,2022",
                                       style: TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w500,

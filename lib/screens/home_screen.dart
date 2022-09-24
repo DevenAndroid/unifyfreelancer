@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var deviceHeight = MediaQuery.of(context).size.height;
     var deviceWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: const PreferredSize(
+     /* appBar: const PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppbar(
           isLikeButton: true,
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           titleText: "Jobs",
         ),
       ),
-      drawer: AppDrawerScreen(),
+      drawer: AppDrawerScreen(),*/
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Padding(

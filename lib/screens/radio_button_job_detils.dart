@@ -21,20 +21,23 @@ class _RadioButtonsState extends State<RadioWidget> {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            SizedBox(
+              height: 10,
+            ),
 
             Stack(
               children: [
                 Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: EdgeInsets.only(top: 10),
+                    padding: EdgeInsets.only(top: 10,left: 13),
                     child: Text(
                       "Select a duration",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w700,),),
                   ),
                 ),
                 Positioned(
-                  top: 0,
-                  right: 0,
+                  top: -16,
+                  right: -16,
                   child:    IconButton( onPressed: ()=>Navigator.pop(context), icon: Icon(Icons.clear,color: AppTheme.primaryColor,),),)
               ],
             ),
@@ -120,6 +123,9 @@ class _RadioButtonsState extends State<RadioWidget> {
                   controller.coverLaterText.value =value.toString();
                 });
               },
+            ),
+            SizedBox(
+              height: 15,
             ),
           ],
         ));
