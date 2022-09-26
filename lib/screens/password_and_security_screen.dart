@@ -35,7 +35,6 @@ class _PasswordAndSecurityScreenState extends State<PasswordAndSecurityScreen> {
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
         body: SingleChildScrollView(
             child: Padding(
                 padding: const EdgeInsets.all(10),
@@ -48,13 +47,13 @@ class _PasswordAndSecurityScreenState extends State<PasswordAndSecurityScreen> {
                             Text(
                               "Password",
                               style: TextStyle(
-                                  fontSize: 16.sp,
+                                  fontSize: 18.sp,
                                   fontWeight: FontWeight.w700,
                                   color: AppTheme.textColor),
                             ),
                             Container(
                               margin: EdgeInsets.only(left: 20),
-                              padding: EdgeInsets.all(7),
+                              padding: EdgeInsets.all(5),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppTheme.whiteColor,
@@ -134,13 +133,13 @@ class _PasswordAndSecurityScreenState extends State<PasswordAndSecurityScreen> {
                             Text(
                               "Two-step verification options",
                               style: TextStyle(
-                                  fontSize: 16.sp,
+                                  fontSize: 18.sp,
                                   fontWeight: FontWeight.w700,
                                   color: AppTheme.textColor),
                             ),
                             Container(
                               margin: EdgeInsets.only(left: 20),
-                              padding: EdgeInsets.all(7),
+                              padding: EdgeInsets.all(5),
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   color: AppTheme.whiteColor,
@@ -420,7 +419,7 @@ class _PasswordAndSecurityScreenState extends State<PasswordAndSecurityScreen> {
                                         ),
                                         Container(
                                           margin: EdgeInsets.only(left: 20),
-                                          padding: EdgeInsets.all(7),
+                                          padding: EdgeInsets.all(5),
                                           decoration: BoxDecoration(
                                               shape: BoxShape.circle,
                                               color: AppTheme.whiteColor,

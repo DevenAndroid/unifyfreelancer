@@ -35,7 +35,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
+
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -63,8 +63,8 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                     Text(
                       "Default Team",
                       style: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w600,
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.bold,
                           color: AppTheme.settingsTextColor),
                     ),
 
@@ -147,7 +147,7 @@ class _MyTeamsScreenState extends State<MyTeamsScreen> {
                     Text(
                       "My Team",
                       style: TextStyle(
-                          fontSize: 16.sp,
+                          fontSize: 18.sp,
                           fontWeight: FontWeight.w600,
                           color: AppTheme.settingsTextColor),
                     ),

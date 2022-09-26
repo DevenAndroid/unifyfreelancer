@@ -26,7 +26,7 @@ class _ContactInfoScreenState extends State<ContactInfoScreen> {
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
+
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(10),

@@ -27,7 +27,6 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
         body: Container(
           margin: const EdgeInsets.all(10),
           width: MediaQuery.of(context).size.width,
@@ -53,7 +52,7 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
               Text(
                 "Manage billing method",
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: AppTheme.settingsTextColor),
               ),
@@ -81,7 +80,7 @@ class _BillingAndPaymentScreenState extends State<BillingAndPaymentScreen> {
               Text(
                 "Primary",
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                     color: AppTheme.settingsTextColor),
               ),

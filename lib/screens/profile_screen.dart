@@ -187,7 +187,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.symmetric(vertical: 10),
+              margin: const EdgeInsets.only(top: 15,bottom: 10),
               width: deviceWidth,
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -242,7 +242,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 color: Color(0xff180095)),
                           ),
                           SizedBox(
-                            width: 10.w,
+                            width: 20.w,
                           ),
                           /*RatingBar.builder(
                             itemSize: 20,
@@ -290,7 +290,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 20),
-                            padding: EdgeInsets.all(7),
+                            padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: AppTheme.whiteColor,
@@ -308,7 +308,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ),
             ),
-            Container(
+          /*  Container(
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 width: deviceWidth,
                 padding: const EdgeInsets.all(10),
@@ -330,8 +330,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
                       children: [
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -369,6 +371,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         Padding(
                           padding: const EdgeInsets.only(right: 20.0),
                           child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -419,6 +422,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -454,6 +458,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ],
                         ),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -490,7 +495,166 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       ],
                     ),
                   ],
+                )),*/
+
+            Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                width: deviceWidth,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: AppTheme.whiteColor,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      spreadRadius: 2,
+                      blurRadius: 4,
+                      offset: const Offset(0, 3), // changes position of shadow
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          flex: 5 ,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Total Earning",
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppTheme.darkBlueText
+                                        .withOpacity(0.47)),
+                              ),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              Text(
+                                "\$100K",
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff0777FD)),
+                              )
+
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 4 ,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Total Jobs",
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppTheme.darkBlueText
+                                        .withOpacity(0.47)),
+                              ),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              Text(
+                                "26",
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff6B428B)),
+                              )
+                            ],
+                          ),
+                        ),
+
+
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Divider(
+                      color: AppTheme.pinkText.withOpacity(.29),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          flex: 5 ,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Total Hours",
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppTheme.darkBlueText
+                                        .withOpacity(0.47)),
+                              ),
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              Text(
+                                "2065",
+                                style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xffF66C6C)),
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+                        Expanded(
+                          flex: 4 ,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Pending Project",
+                                style: TextStyle(
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppTheme.darkBlueText
+                                        .withOpacity(0.47)),
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text("26",
+                                  style: TextStyle(
+                                    fontSize: 22,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppTheme.pinkText,
+                                  ))
+
+                            ],
+                          ),
+                        ),
+
+
+
+                      ],
+                    ),
+                  ],
                 )),
+
+
+
+
             Container(
                 margin: const EdgeInsets.symmetric(vertical: 10),
                 width: deviceWidth,
@@ -526,7 +690,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 20),
-                          padding: EdgeInsets.all(7),
+                          padding: EdgeInsets.all(5),
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: AppTheme.whiteColor,
@@ -600,7 +764,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       "Experienced Developer for Wellenss",
                       style: TextStyle(
                           fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           color: AppTheme.darkBlueText),
                     ),
                     SizedBox(
@@ -629,8 +793,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           children:
                           List.generate(5, (index) =>
                           5 > index ?
-                          Icon(Icons.star,color: AppTheme.primaryColor,):
-                          Icon(Icons.star_border_outlined,color: Colors.grey,)
+                          Icon(Icons.star,color: AppTheme.primaryColor, size: 17,):
+                          Icon(Icons.star_border_outlined,color: Colors.grey,  size: 17,)
                           ),
                         ),
                         SizedBox(

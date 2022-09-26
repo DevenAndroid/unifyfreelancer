@@ -25,7 +25,7 @@ class _GetPaidScreenState extends State<GetPaidScreen> {
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
+
         body: Column(
           children: [
             Container(

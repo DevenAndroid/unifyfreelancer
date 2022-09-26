@@ -28,7 +28,6 @@ class _UnifyQualificationsScreenState extends State<UnifyQualificationsScreen> {
           // onPressedForLeading:,
         ),
       ),
-      drawer: AppDrawerScreen(),
       body: ListView.builder(
           shrinkWrap: true,
           physics: AlwaysScrollableScrollPhysics(),

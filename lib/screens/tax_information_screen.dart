@@ -25,7 +25,6 @@ class _TaxInformationScreenState extends State<TaxInformationScreen> {
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
         body: SingleChildScrollView(
           child: Column(
             children: [

@@ -113,45 +113,50 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
-                        TabBar(
-                          labelColor: AppTheme.primaryColor,
-                          unselectedLabelColor: AppTheme.blackColor,
-                          // indicatorColor: const Color(0xffFA61FF),
-                          indicator: UnderlineTabIndicator(
-                            borderSide: BorderSide(
-                              width: 3.0.w,
-                              color: AppTheme.pinkText,
+                        Center(
+                          child: TabBar(
+                            labelColor: AppTheme.primaryColor,
+                            unselectedLabelColor: AppTheme.blackColor,
+                            padding: EdgeInsets.zero,
+                            isScrollable: true,
+                            indicatorPadding: EdgeInsets.zero,
+                            // indicatorColor: const Color(0xffFA61FF),
+                            indicator: UnderlineTabIndicator(
+                              borderSide: BorderSide(
+                                width: 3.0.w,
+                                color: AppTheme.pinkText,
+                              ),
                             ),
+                            automaticIndicatorColorAdjustment: true,
+                            unselectedLabelStyle:
+                                const TextStyle(fontWeight: FontWeight.w500),
+                            tabs: [
+                              Tab(
+                                child: Text(
+                                  "My Feed",
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                              Tab(
+                                child: Text(
+                                  "Best Matches",
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
+                              Tab(
+                                child: Text(
+                                  "Most Recent",
+                                  style: TextStyle(
+                                      fontSize: 14.sp,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              )
+                            ],
                           ),
-                          automaticIndicatorColorAdjustment: true,
-                          unselectedLabelStyle:
-                              const TextStyle(fontWeight: FontWeight.w500),
-                          tabs: [
-                            Tab(
-                              child: Text(
-                                "My Feed",
-                                style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                            Tab(
-                              child: Text(
-                                "Best Matches",
-                                style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                            Tab(
-                              child: Text(
-                                "Most Recent",
-                                style: TextStyle(
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            )
-                          ],
                         ),
                         Container(
                              padding: const EdgeInsets.only(top: 10),

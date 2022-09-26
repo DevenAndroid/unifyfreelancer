@@ -24,7 +24,6 @@ class _ChatScreenState extends State<ChatScreen> {
             titleText: "Messages",
           ),
         ),
-        drawer: AppDrawerScreen(),
         body: SingleChildScrollView(
 
           child: Column(

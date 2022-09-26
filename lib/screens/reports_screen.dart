@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:unifyfreelancer/widgets/common_outline_button.dart';
 
 import '../resources/app_theme.dart';
@@ -13,7 +14,8 @@ class ReportsScreen extends StatefulWidget {
 }
 
 class _ReportsScreenState extends State<ReportsScreen> {
-  String dropDownValue = 'All Transactions';
+  RxString dropDownValue1 = 'All Transactions'.obs;
+  RxString dropDownValue2 = 'All freelancers'.obs;
 
   var items = [
     'All Debits All Credits',
@@ -131,7 +133,8 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                   "\$1000.00",
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.w600,
+                                                      fontWeight:
+                                                          FontWeight.w600,
                                                       color: AppTheme
                                                           .primaryColor),
                                                 )
@@ -215,7 +218,8 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                           children: [
                                                             InkWell(
                                                               onTap: () =>
-                                                                  Navigator.pop(context),
+                                                                  Navigator.pop(
+                                                                      context),
                                                               child: Icon(
                                                                 Icons.clear,
                                                                 color: AppTheme
@@ -238,8 +242,113 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                         SizedBox(
                                                           height: 20.h,
                                                         ),
-                                                        DropdownButtonFormField<
+                                                        PopupMenuButton<int>(
+                                                          constraints:
+                                                              BoxConstraints(
+                                                                  maxHeight:
+                                                                      400),
+                                                          position:
+                                                              PopupMenuPosition
+                                                                  .under,
+                                                          offset: Offset
+                                                              .fromDirection(
+                                                                  50, 100),
+                                                          onSelected: (value) {
+                                                            print(value);
+                                                            setState(() {
+                                                              dropDownValue1
+                                                                      .value =
+                                                                  items[value];
+                                                            });
+                                                          },
+                                                          // icon: Icon(Icons.keyboard_arrow_down),
+                                                          itemBuilder: (context) =>
+                                                              List.generate(
+                                                                  items.length,
+                                                                  (index) => PopupMenuItem(
+                                                                      value:
+                                                                          index,
+                                                                      child: Text(
+                                                                          "${items[index]}"))),
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        10,
+                                                                    vertical:
+                                                                        10),
+                                                            decoration: BoxDecoration(
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            5)),
+                                                                border: Border.all(
+                                                                    color: AppTheme
+                                                                        .primaryColor)),
+                                                            child: Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Obx(() {
+                                                                  return Text(
+                                                                    "${dropDownValue1.value.toString()}",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            14,
+                                                                        color: AppTheme
+                                                                            .primaryColor,
+                                                                        fontWeight:
+                                                                            FontWeight.w600),
+                                                                  );
+                                                                }),
+                                                                Icon(Icons
+                                                                    .keyboard_arrow_down_rounded)
+
+                                                                /*DropdownButtonFormField(
+                                                                  isDense: true,
+                                                                  isExpanded: false,
+                                                                    decoration: InputDecoration(
+                                                                      border: InputBorder.none,
+                                                                    ),
+                                                                    items: List.generate(
+                                                                    items.length,
+                                                                        (index) =>
+                                                                        DropdownMenuItem(
+                                                                          value: items[
+                                                                          index],
+                                                                          child: Text(
+                                                                              items[index]
+                                                                                  .toString(),
+                                                                              style: TextStyle(
+                                                                                  fontSize:
+                                                                                  12,
+                                                                                  fontWeight:
+                                                                                  FontWeight.w600,
+                                                                                  color: AppTheme.blackColor)),
+                                                                        )), onChanged: (value){}),*/
+                                                                // PopupMenuButton<int>(
+                                                                //   onSelected: (value){
+                                                                //     print(value);
+                                                                //     setState(() {
+                                                                //       dropDownValue1.value = items[value];
+                                                                //     });
+                                                                //   },
+                                                                //   // icon: Icon(Icons.keyboard_arrow_down),
+                                                                //     itemBuilder: (context)=>List.generate(items.length,(index)=> PopupMenuItem(
+                                                                //       value: index,
+                                                                //         child: Text("${items[index]}")))
+                                                                // )
+                                                              ],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        SizedBox(
+                                                          height: 15.h,
+                                                        ),
+                                                        /*DropdownButtonFormField<
                                                             dynamic>(
+                                                          isDense: true,
                                                           isExpanded: true,
                                                           value: null,
                                                           validator: (value) {
@@ -321,17 +430,118 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                                                 12,
                                                                             fontWeight:
                                                                                 FontWeight.w600,
-                                                                            color: AppTheme.primaryColor)),
+                                                                            color: AppTheme.blackColor)),
                                                                   )),
                                                           // After selecting the desired option,it will
                                                           // change button value to selected value
                                                           onChanged:
                                                               (newValue) {},
+                                                        ),*/
+                                                        PopupMenuButton<int>(
+                                                          constraints:
+                                                              BoxConstraints(
+                                                                  maxHeight:
+                                                                      300),
+                                                          position:
+                                                              PopupMenuPosition
+                                                                  .under,
+                                                          offset: Offset
+                                                              .fromDirection(
+                                                                  50, 100),
+                                                          onSelected: (value) {
+                                                            print(value);
+                                                            setState(() {
+                                                              dropDownValue2
+                                                                      .value =
+                                                                  items[value];
+                                                            });
+                                                          },
+                                                          // icon: Icon(Icons.keyboard_arrow_down),
+                                                          itemBuilder: (context) =>
+                                                              List.generate(
+                                                                  items.length,
+                                                                  (index) => PopupMenuItem(
+                                                                      value:
+                                                                          index,
+                                                                      child: Text(
+                                                                          "${items[index]}"))),
+                                                          child: Container(
+                                                            padding: EdgeInsets
+                                                                .symmetric(
+                                                                    horizontal:
+                                                                        10,
+                                                                    vertical:
+                                                                        10),
+                                                            decoration: BoxDecoration(
+                                                                borderRadius: BorderRadius
+                                                                    .all(Radius
+                                                                        .circular(
+                                                                            5)),
+                                                                border: Border.all(
+                                                                    color: AppTheme
+                                                                        .primaryColor)),
+                                                            child: Row(
+                                                              mainAxisAlignment:
+                                                                  MainAxisAlignment
+                                                                      .spaceBetween,
+                                                              children: [
+                                                                Obx(() {
+                                                                  return Text(
+                                                                    "${dropDownValue2.value.toString()}",
+                                                                    style: TextStyle(
+                                                                        fontSize:
+                                                                            14,
+                                                                        color: AppTheme
+                                                                            .primaryColor,
+                                                                        fontWeight:
+                                                                            FontWeight.w600),
+                                                                  );
+                                                                }),
+                                                                Icon(Icons
+                                                                    .keyboard_arrow_down_rounded)
+
+                                                                /*DropdownButtonFormField(
+                                                                  isDense: true,
+                                                                  isExpanded: false,
+                                                                    decoration: InputDecoration(
+                                                                      border: InputBorder.none,
+                                                                    ),
+                                                                    items: List.generate(
+                                                                    items.length,
+                                                                        (index) =>
+                                                                        DropdownMenuItem(
+                                                                          value: items[
+                                                                          index],
+                                                                          child: Text(
+                                                                              items[index]
+                                                                                  .toString(),
+                                                                              style: TextStyle(
+                                                                                  fontSize:
+                                                                                  12,
+                                                                                  fontWeight:
+                                                                                  FontWeight.w600,
+                                                                                  color: AppTheme.blackColor)),
+                                                                        )), onChanged: (value){}),*/
+                                                                // PopupMenuButton<int>(
+                                                                //   onSelected: (value){
+                                                                //     print(value);
+                                                                //     setState(() {
+                                                                //       dropDownValue1.value = items[value];
+                                                                //     });
+                                                                //   },
+                                                                //   // icon: Icon(Icons.keyboard_arrow_down),
+                                                                //     itemBuilder: (context)=>List.generate(items.length,(index)=> PopupMenuItem(
+                                                                //       value: index,
+                                                                //         child: Text("${items[index]}")))
+                                                                // )
+                                                              ],
+                                                            ),
+                                                          ),
                                                         ),
                                                         SizedBox(
                                                           height: 20.h,
                                                         ),
-                                                        DropdownButtonFormField(
+                                                        /*DropdownButtonFormField(
                                                           isExpanded: true,
                                                           // Initial Value
                                                           validator: (value) {
@@ -419,7 +629,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                           // change button value to selected value
                                                           onChanged:
                                                               (newValue) {},
-                                                        ),
+                                                        ),*/
                                                         SizedBox(
                                                           height:
                                                               deviceHeight * .4,

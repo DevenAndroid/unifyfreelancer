@@ -21,11 +21,10 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
           child: CustomAppbar(
             isLikeButton: false,
             isProfileImage: false,
-            titleText: "Password & Security",
+            titleText: "Help & Support",
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
         floatingActionButton: Container(
           margin: EdgeInsets.only(bottom: 60),
           padding: EdgeInsets.all(15),
@@ -46,6 +45,9 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 5,
+                ),
                 Text(
                   "Troubleshoot mobile App",
                   style: TextStyle(
@@ -54,6 +56,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                       color: AppTheme.primaryColor),
                 ),
                 Card(
+                  elevation: 0.5,
                   margin: EdgeInsets.only(top: 10),
                   color: AppTheme.whiteColor,
                   child: ExpansionTile(
@@ -68,7 +71,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.only(left: 20,right: 40),
+                          padding: EdgeInsets.only(left: 20,right: 40,top: 10,bottom: 10),
                           child: Text(
                               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been."
                           ,style: TextStyle(
@@ -80,6 +83,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   ),
                 ),
                 Card(
+                  elevation: 0.5,
                   margin: EdgeInsets.only(top: 10),
                   color: AppTheme.whiteColor,
                   child: ExpansionTile(
@@ -94,7 +98,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.only(left: 20,right: 40),
+                          padding: EdgeInsets.only(left: 20,right: 40,top: 10,bottom: 10),
                           child: Text(
                               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
                               fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
@@ -105,6 +109,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   ),
                 ),
                 Card(
+                  elevation: 0.5,
                   margin: EdgeInsets.only(top: 10),
                   color: AppTheme.whiteColor,
                   child: ExpansionTile(
@@ -119,7 +124,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.only(left: 20,right: 40),
+                          padding: EdgeInsets.only(left: 20,right: 40,top: 10,bottom: 10),
                           child: Text(
                               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
                               fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
@@ -130,6 +135,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   ),
                 ),
                 Card(
+                  elevation: 0.5,
                   margin: EdgeInsets.only(top: 10),
                   color: AppTheme.whiteColor,
                   child: ExpansionTile(
@@ -144,7 +150,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.only(left: 20,right: 40),
+                          padding: EdgeInsets.only(left: 20,right: 40,top: 10,bottom: 10),
                           child: Text(
                               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
                               fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),
@@ -155,6 +161,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                   ),
                 ),
                 Card(
+                  elevation: 0.5,
                   margin: EdgeInsets.only(top: 10),
                   color: AppTheme.whiteColor,
                   child: ExpansionTile(
@@ -169,7 +176,7 @@ class _HelpAndSupportScreenState extends State<HelpAndSupportScreen> {
                     ),
                     children: [
                       Padding(
-                          padding: EdgeInsets.only(left: 20,right: 40),
+                          padding: EdgeInsets.only(left: 20,right: 40,top: 10,bottom: 10),
                           child: Text(
                               "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.",style: TextStyle(
                               fontSize: 12,color: AppTheme.textColor.withOpacity(.63)),)),

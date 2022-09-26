@@ -69,7 +69,7 @@ class CustomAppbar extends StatelessWidget {
         style: TextStyle(
             fontWeight: FontWeight.w600,
             color: AppTheme.textColor,
-            fontSize: 18.sp),
+            fontSize: 20.sp),
       ),
       actions: [
         isLikeButton == true

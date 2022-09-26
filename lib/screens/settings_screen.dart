@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:unifyfreelancer/routers/my_router.dart';
 
@@ -27,7 +28,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           // onPressedForLeading:,
         ),
       ),
-      drawer: AppDrawerScreen(),
+
       body: SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(
@@ -68,7 +69,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   "Billing & Payment",
                                   style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff1F1F1F)),
                                 ),
                               ],
@@ -97,16 +98,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             Row(
                               children: [
                                 Container(
-                                    padding: EdgeInsets.all(7),
+                                    padding: EdgeInsets.all(9),
                                     decoration: BoxDecoration(
                                         shape: BoxShape.circle,
                                         color: AppTheme.primaryColor
                                             .withOpacity(.15)),
-                                    child: Icon(
-                                      Icons.description_outlined,
-                                      color: AppTheme.primaryColor,
-                                      size: 20,
-                                    )),
+                                    child: SvgPicture.asset("assets/icon/contact_info.svg")),
                                 SizedBox(
                                   width: 10.w,
                                 ),
@@ -114,7 +111,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   "Contact info",
                                   style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff1F1F1F)),
                                 ),
                               ],
@@ -156,7 +153,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   "Tax Information",
                                   style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff1F1F1F)),
                                 ),
                               ],
@@ -202,7 +199,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   "Profile setting",
                                   style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff1F1F1F)),
                                 ),
                               ],
@@ -248,7 +245,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   "Get paid",
                                   style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff1F1F1F)),
                                 ),
                               ],
@@ -294,7 +291,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   "My Teams ",
                                   style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff1F1F1F)),
                                 ),
                               ],
@@ -339,7 +336,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   "Password & security",
                                   style: TextStyle(
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w600,
+                                      fontWeight: FontWeight.bold,
                                       color: Color(0xff1F1F1F)),
                                 ),
                               ],

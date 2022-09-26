@@ -43,7 +43,7 @@ class _AlertsScreenState extends State<AlertsScreen> {
                   style: TextStyle(
                       fontSize: 18,
                       color: AppTheme.textColor,
-                      fontWeight: FontWeight.w500),
+                      fontWeight: FontWeight.w600),
                 ),
               ),
               SizedBox(
@@ -93,17 +93,40 @@ class _AlertsScreenState extends State<AlertsScreen> {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 20.w,
+                                  height: 10.h,
                                 ),
                                 index % 2 == 0
-                                    ? CustomOutlineButton(
+                                    ? ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                        side: const BorderSide(
+                                          color: Color(0xff6D2EF1),
+                                        ),
+                                        shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                              Radius.circular(30),
+                                            )),
+                                        padding: EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+                                        textStyle: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        )),
+                                    onPressed: (){},
+                                    child: Text(
+                                      "Respond",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13.sp,
+                                        color: AppTheme.whiteColor,
+                                      ),
+                                    ))
+
+                                /*CustomOutlineButton(
                                         expandedValue: false,
                                         title: "   Respond   ",
                                         backgroundColor:
                                             AppTheme.primaryColor,
                                         textColor: AppTheme.whiteColor,
                                         onPressed: () {},
-                                      )
+                                      )*/
                                     : SizedBox()
                               ],
                             ),

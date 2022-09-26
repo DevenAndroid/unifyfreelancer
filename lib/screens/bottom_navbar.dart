@@ -86,7 +86,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
             children: [
               Flexible(
                 child: MaterialButton(
-                  padding: EdgeInsets.zero,
+                  padding: EdgeInsets.only(bottom: 10),
                   onPressed: () {
                     controller.updateIndexValue(0);
                   },
@@ -119,7 +119,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
               ),
               Flexible(
                 child: MaterialButton(
-                  padding: EdgeInsets.zero,
+                  padding: EdgeInsets.only(bottom: 10),
                   onPressed: () {
                     controller.updateIndexValue(1);
                   },
@@ -151,41 +151,44 @@ class _BottomNavbarState extends State<BottomNavbar> {
                 ),
               ),
               Flexible(
-                child: MaterialButton(
-                  padding: EdgeInsets.zero,
-                  onPressed: () {
-                    controller.updateIndexValue(2);
-                  },
-                  child: Column(
-                    children: [
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      controller.pageIndex.value == 2
-                          ? SvgPicture.asset(
-                        'assets/icon/Contracts.svg',
-                        color: AppTheme.primaryColor,
-                      )
-                          : SvgPicture.asset('assets/icon/Contracts.svg'),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        'Contracts',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: controller.pageIndex.value == 2
-                                ? AppTheme.primaryColor
-                                : AppTheme.subText),
-                      ),
-                    ],
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: MaterialButton(
+                    padding: EdgeInsets.only(bottom: 10),
+                    onPressed: () {
+                      controller.updateIndexValue(2);
+                    },
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        controller.pageIndex.value == 2
+                            ? SvgPicture.asset(
+                          'assets/icon/Contracts.svg',
+                          color: AppTheme.primaryColor,
+                        )
+                            : SvgPicture.asset('assets/icon/Contracts.svg'),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          'Contracts',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: controller.pageIndex.value == 2
+                                  ? AppTheme.primaryColor
+                                  : AppTheme.subText),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
               Flexible(
                 child: MaterialButton(
-                  padding: EdgeInsets.zero,
+                  padding: EdgeInsets.only(bottom: 10),
                   onPressed: () {
                     controller.updateIndexValue(3);
                   },
@@ -218,7 +221,7 @@ class _BottomNavbarState extends State<BottomNavbar> {
               ),
               Flexible(
                 child: MaterialButton(
-                  padding: EdgeInsets.zero,
+                  padding: EdgeInsets.only(bottom: 10),
                   onPressed: () {
                     controller.updateIndexValue(4);
                   },

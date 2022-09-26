@@ -25,7 +25,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
     'Expense',
   ];
 
-  String? gender;
+  String? expValue;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
             // onPressedForLeading:,
           ),
         ),
-        drawer: AppDrawerScreen(),
+
         body: SingleChildScrollView(
           child: Padding(
               padding: const EdgeInsets.all(10),
@@ -52,7 +52,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                       Text(
                         "My Profile",
                         style: TextStyle(
-                            fontSize: 16.sp,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.w600,
                             color: AppTheme.textColor),
                       ),
@@ -91,7 +91,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                             "Visibility",
                             style: TextStyle(
                                 fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                                 color: AppTheme.textColor),
                           ),
                           SizedBox(
@@ -140,7 +140,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                                 "Project preference",
                                 style: TextStyle(
                                     fontSize: 14.sp,
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.w600,
                                     color: AppTheme.textColor),
                               ),
                               SizedBox(
@@ -222,7 +222,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                                 "Earnings  privacy",
                                 style: TextStyle(
                                     fontSize: 14.sp,
-                                    fontWeight: FontWeight.w500,
+                                    fontWeight: FontWeight.w600,
                                     color: AppTheme.textColor),
                               ),
                               SizedBox(
@@ -290,7 +290,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                             "Entry",
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                                 color: AppTheme.settingsTextColor),
                           ),
                           subtitle: Text(
@@ -300,11 +300,11 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           contentPadding: const EdgeInsets.all(0),
                           dense: true,
                           visualDensity: VisualDensity(horizontal: -4, vertical: -4),
-                          value: "male",
-                          groupValue: gender,
+                          value: "entry",
+                          groupValue: expValue,
                           onChanged: (value) {
                             setState(() {
-                              gender = value.toString();
+                              expValue = value.toString();
                             });
                           },
                         ),
@@ -313,7 +313,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                             "Intermediate",
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                                 color: AppTheme.settingsTextColor),
                           ),
                           subtitle: Text(
@@ -324,11 +324,11 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           dense: true,
                           visualDensity:
                           const VisualDensity(horizontal: -4, vertical: -4),
-                          value: "female",
-                          groupValue: gender,
+                          value: "intermediate",
+                          groupValue: expValue,
                           onChanged: (value) {
                             setState(() {
-                              gender = value.toString();
+                              expValue = value.toString();
                             });
                           },
                         ),
@@ -337,7 +337,7 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                             "Expert",
                             style: TextStyle(
                                 fontSize: 14,
-                                fontWeight: FontWeight.w500,
+                                fontWeight: FontWeight.w600,
                                 color: AppTheme.settingsTextColor),
                           ),
                           subtitle: Text(
@@ -348,11 +348,11 @@ class _ProfileSettingScreenState extends State<ProfileSettingScreen> {
                           dense: true,
                           visualDensity:
                           const VisualDensity(horizontal: -4, vertical: -4),
-                          value: "other",
-                          groupValue: gender,
+                          value: "Expert",
+                          groupValue: expValue,
                           onChanged: (value) {
                             setState(() {
-                              gender = value.toString();
+                              expValue = value.toString();
                             });
                           },
                         )
