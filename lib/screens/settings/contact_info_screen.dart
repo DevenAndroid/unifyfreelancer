@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../resources/app_theme.dart';
-import '../widgets/appDrawer.dart';
-import '../widgets/common_outline_button.dart';
-import '../widgets/custom_appbar.dart';
+import '../../resources/app_theme.dart';
+import '../../widgets/common_outline_button.dart';
+import '../../widgets/custom_appbar.dart';
+
+
 
 class ContactInfoScreen extends StatefulWidget {
   const ContactInfoScreen({Key? key}) : super(key: key);

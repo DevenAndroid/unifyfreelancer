@@ -302,8 +302,12 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                                             FontWeight.w600),
                                                                   );
                                                                 }),
-                                                                Icon(Icons
-                                                                    .keyboard_arrow_down_rounded)
+                                                                Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_rounded,
+                                                                  color: AppTheme
+                                                                      .primaryColor,
+                                                                )
 
                                                                 /*DropdownButtonFormField(
                                                                   isDense: true,
@@ -497,8 +501,12 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                                                             FontWeight.w600),
                                                                   );
                                                                 }),
-                                                                Icon(Icons
-                                                                    .keyboard_arrow_down_rounded)
+                                                                Icon(
+                                                                  Icons
+                                                                      .keyboard_arrow_down_rounded,
+                                                                  color: AppTheme
+                                                                      .primaryColor,
+                                                                )
 
                                                                 /*DropdownButtonFormField(
                                                                   isDense: true,

@@ -4,29 +4,29 @@ import 'package:unifyfreelancer/Screens/userflow/signup_screen.dart';
 import 'package:unifyfreelancer/Screens/userflow/splashScreen.dart';
 
 import '../Screens/alerts_screen.dart';
-import '../Screens/billing_and_payment_screen.dart';
+
 import '../Screens/bottom_navbar.dart';
 import '../Screens/chat_screen.dart';
-import '../Screens/contact_info_screen.dart';
 import '../Screens/contracts_details_screen.dart';
 import '../Screens/contracts_screen.dart';
-import '../Screens/get_paid_screen.dart';
 import '../Screens/help_and_support_screen.dart';
-
 import '../Screens/home_screen.dart';
 import '../Screens/job_details_screen.dart';
 import '../Screens/messages_screen.dart';
-import '../Screens/my_teams_screen.dart';
-import '../Screens/password_and_security_screen.dart';
 import '../Screens/profile_screen.dart';
-import '../Screens/profile_setting_screen.dart';
 import '../Screens/proposals_screen.dart';
 import '../Screens/reports_screen.dart';
 import '../Screens/save_jobs_screen.dart';
 import '../Screens/settings_screen.dart';
-import '../Screens/tax_information_screen.dart';
 import '../Screens/unify_qualifications.dart';
 import '../Screens/userflow/onboarding_screen.dart';
+import '../screens/settings/billing_and_payment_screen.dart';
+import '../screens/settings/contact_info_screen.dart';
+import '../screens/settings/get_paid_screen.dart';
+import '../screens/settings/my_teams_screen.dart';
+import '../screens/settings/password_and_security_screen.dart';
+import '../screens/settings/profile_setting_screen.dart';
+import '../screens/settings/tax_information_screen.dart';
 
 class MyRouter {
   static var splashScreen = "/splashScreen";
@@ -58,7 +58,8 @@ class MyRouter {
 
   static var route = [
     GetPage(name: '/', page: () => const BottomNavbar()),
-    GetPage(name: MyRouter.onBoardingScreen, page: () => const OnBoardingScreen()),
+    GetPage(
+        name: MyRouter.onBoardingScreen, page: () => const OnBoardingScreen()),
     GetPage(name: MyRouter.signUpScreen, page: () => const SignUpScreen()),
     GetPage(name: MyRouter.loginScreen, page: () => const LoginScreen()),
     GetPage(name: MyRouter.bottomNavbar, page: () => const BottomNavbar()),
